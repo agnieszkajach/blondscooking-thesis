@@ -66,7 +66,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "0.5 glass: all-purpose flour, sugar, 1 spoon: soda powder, baking powder, cinnamon, gingerbread spices, 0.3 cup vegetable oil, 2 fluffy eggs, 1 cup: nuts, grated carrot, few slices of pineapple, cream: 300g mascarpone, 6 tablespoons butter, 1.5 cup powdered sugar, 1 spoon vanilla extract",
                 Temperature = "175",
                 Time = "45 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/1.png"               
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -76,7 +77,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "550g all-purpose flour, yeast, 3 tablespoons sugar, 300ml milk, 80g butter, 3 small eggs, cinnamon",
                 Temperature = "175",
                 Time = "30 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cookies") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cookies") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cookies/2.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -86,7 +88,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "1.5 cup all-purpose flour, 0.5 cup sugar, 0.25 cup cocoa, 1 spoon baking soda, 1 spoon baking powder, 3 bananas, 0.3 cup vegetable oil, 1 egg, 1 white chocolate",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/3.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -96,7 +99,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2.5 cup all-purpose flour, 0.5 cup sugar, 1 spoon baking powder, 24 oreo cookies, 2 eggs, 1 cup yogurt, 100ml vegetable oil",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/4.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -106,7 +110,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "1.5 cup all-purpose flour, 0.5 cup: rye flour, sugar, honey, 1 spoon: baking powder, soda powder, gingerbread spices, 1 cup buttermilk, 1 egg, 50g oil, 2 tablespoons cocoa, 1 apple, 50 g of nuts",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/5.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -116,7 +121,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2.5 cup all-purpose flour, 0.5 cup sugar, 1 spoon baking powder, 3 snickers bars, 2 eggs, 1 cup yogurt, 100ml vegetable oil",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/6.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -126,7 +132,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2.5 cup all-purpose flour, 0.5 cup sugar, 1 spoon baking powder, 1 white chocolate, 300g blueberries, 2 eggs, 1 cup yogurt, 100ml vegetable oil",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/7.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -136,7 +143,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2.5 cup all-purpose flour, 0.5 cup sugar, 1 spoon baking powder, 300g strawberries, 2 eggs, 1 cup yogurt, 100ml vegetable oil",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/8.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -146,7 +154,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "200g pasta, 500g spinach, 100g smoked salmon, onion, garlic, spices, 100g yogurt",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Diners/9.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -156,7 +165,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "1 banana, 250ml apple juice, 250g spinach",
                 Temperature = "",
                 Time = "",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Shakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Shakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Shakes/10.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -166,7 +176,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "150g all-purpose flour, 150g rough flour, 200g butter, 100g sugar, 1 yolk, 2 tablespoons cream, 1 spoon vanilla extract, 3 rhubarb stalks, Pudding: 30g of all purpose flour, 3 yolks, 90g of sugar, 250ml of milk, 1 spoon of vanilla extract",
                 Temperature = "175",
                 Time = "25 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/11.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -176,7 +187,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "500g cottage cheese, 250g mascarpone, 150g condensed milk, 2 tablespoons powdered sugar, 2 spoons potato flour, 3 albumen, 3 tablespoons butter, 150g oreo cookies",
                 Temperature = "150",
                 Time = "60 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/12.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -186,7 +198,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "500g cottage cheese, 250g mascarpone, 150g condensed milk, 2 tablespoons powdered sugar, 2 spoons potato flour, 3 al3 tablespoons butter, 12 oreo cookies, 500g cream cheese, 1.5 cups powdered sugar, 0.5 cup Nutella, 1 cup mascarpone, 3 spoon gelatin melted in 2 tablespoon waterbumen, 3 tablespoons butter, 150g oreo cookies",
                 Temperature = "",
                 Time = "",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/13.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -196,7 +209,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "250ml buttermilk, 30g protein powder, 200g blueberries",
                 Temperature = "",
                 Time = "",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Shakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Shakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Shakes/14.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -206,7 +220,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "150g all-purpose flour, 150g rough flour, 200g butter, 100g sugar, 1 yolk, 2 tablespoons cream, 1 spoon vanilla extract, 500g raspberries, Pudding: 30g of all purpose flour, 3 yolks, 90g of sugar, 250ml of milk, 1 spoon of vanilla extract",
                 Temperature = "175",
                 Time = "25 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/15.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -216,7 +231,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "1000g cheese, 200g mascarpone, 150g sugar powder, 4 tablespoons peanut butter, 2 tablespoons potato flour, 2 tablespoons all-purpose flour, 5 eggs, 100g white chocolate, 200g heavy cream, 1 spoon vanilla extract, 100g peanut in honey, 200g cookies, 200g dulce de leche",
                 Temperature = "",
                 Time = "",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/16.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -226,7 +242,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2 cups all-purpose flour, 1 spoon baking powder, 0.5 cup sugar, 100g melted butter, 1 egg, 1 cup yogurt, 3 rhubarb stalks, pudding: 1 cup milk, 30g all-purpose flour, 3 yolks, 90g sugar, 1 spoon vanilla extract",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/17.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -236,7 +253,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2 cups all-purpose flour, 0.5 cup sugar, 1 cup milk, 0.5 cup buttermilk, 2 tablespoon cocoa, 1 egg, 1 spoon baking powder, 1 spoon soda powder, 1 banana, cream: 200g 30% sour cream, 1 spoon gelatin, 4 table spoons sugar powder",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/18.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -246,7 +264,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2 cups grated carrot, 1.5 cup all-purpose flour, 4 eggs, 0.5 cup vegetable oil, 0.5 cup sugar, 1 spoon baking powder, 1 spoon soda powder, 1 spoon cinnamon, 1 spoon gingerbread spice, 1 cap nuts, Topping: 100g cream cheese, 4 spoon honey, 2 tablespoon butter",
                 Temperature = "175",
                 Time = "45 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Cakes/19.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -256,7 +275,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "50g millet, cinnamon, 100g yogurt, 1 spoon honey, 2 spoon desiccated coconut, 250g strawberries, nuts",
                 Temperature = "",
                 Time = "",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Dinners/20.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -266,7 +286,8 @@ namespace BlondsCooking.Migrations
                 Ingredients = "2 cups all-purpose flour, 0.5 cup sugar, 2 table spoons honey, 2 bananas, 200g nuts, 2 eggs, 250 ml buttermilk, 1 spoon soda powder, 1 spoon baking powder, 1 spoon cinnamon, 1 spoon vanilla extract",
                 Temperature = "175",
                 Time = "20 min",
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
+                Image = "~/Images/Muffins/21.png"
             });
         }
         #endregion

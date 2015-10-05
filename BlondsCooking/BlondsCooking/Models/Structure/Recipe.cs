@@ -27,5 +27,7 @@ namespace BlondsCooking.Models.Structure
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }
+
+        public string Image { get; set; }
     }
 }
