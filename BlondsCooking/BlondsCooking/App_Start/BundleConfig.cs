@@ -21,10 +21,17 @@ namespace BlondsCooking
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/jquery.easing.min.js",
+                      "~/Scripts/jquery.fittext.js",
+                      "~/Scripts/wow.min.js",
+                      "~/Scripts/creative.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/creative.css",
+                      "~/Content/animate.min.css",
                       "~/Content/site.css"));
         }
     }
