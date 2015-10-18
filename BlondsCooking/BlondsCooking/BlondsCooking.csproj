@@ -202,6 +202,7 @@
     <Content Include="Images\Recipes\Dinners\9.png" />
     <Content Include="Images\Recipes\Muffins\17.png" />
     <Content Include="Images\Recipes\Muffins\18.png" />
+    <Content Include="Images\Recipes\Muffins\21.png" />
     <Content Include="Images\Recipes\Muffins\3.png" />
     <Content Include="Images\Recipes\Muffins\4.png" />
     <Content Include="Images\Recipes\Muffins\5.png" />
@@ -258,6 +259,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

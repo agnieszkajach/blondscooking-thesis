@@ -67,7 +67,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "45 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/1.png"               
+                Image = "~/Images/Recipes/Recipes/Cakes/1.png"               
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -78,7 +78,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "30 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cookies") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cookies/2.png"
+                Image = "~/Images/Recipes/Cookies/2.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -89,7 +89,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/3.png"
+                Image = "~/Images/Recipes/Muffins/3.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -100,7 +100,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/4.png"
+                Image = "~/Images/Recipes/Muffins/4.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -111,7 +111,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/5.png"
+                Image = "~/Images/Recipes/Muffins/5.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -122,7 +122,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/6.png"
+                Image = "~/Images/Recipes/Muffins/6.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -133,7 +133,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/7.png"
+                Image = "~/Images/Recipes/Muffins/7.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -144,7 +144,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/8.png"
+                Image = "~/Images/Recipes/Muffins/8.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -155,7 +155,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Diners/9.png"
+                Image = "~/Images/Recipes/Diners/9.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -166,7 +166,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "",
                 Time = "",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Shakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Shakes/10.png"
+                Image = "~/Images/Recipes/Shakes/10.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -177,7 +177,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "25 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/11.png"
+                Image = "~/Images/Recipes/Cakes/11.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -188,7 +188,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "150",
                 Time = "60 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/12.png"
+                Image = "~/Images/Recipes/Cakes/12.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -199,7 +199,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "",
                 Time = "",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/13.png"
+                Image = "~/Images/Recipes/Cakes/13.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -210,7 +210,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "",
                 Time = "",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Shakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Shakes/14.png"
+                Image = "~/Images/Recipes/Shakes/14.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -221,7 +221,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "25 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/15.png"
+                Image = "~/Images/Recipes/Cakes/15.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -232,7 +232,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "",
                 Time = "",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/16.png"
+                Image = "~/Images/Recipes/Cakes/16.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -243,7 +243,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/17.png"
+                Image = "~/Images/Recipes/Muffins/17.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -254,7 +254,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/18.png"
+                Image = "~/Images/Recipes/Muffins/18.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -265,7 +265,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "45 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Cakes/19.png"
+                Image = "~/Images/Recipes/Cakes/19.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -276,7 +276,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "",
                 Time = "",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Dinners/20.png"
+                Image = "~/Images/Recipes/Dinners/20.png"
             });
 
             context.Recipes.AddOrUpdate(new Recipe()
@@ -287,7 +287,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Muffins") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Muffins/21.png"
+                Image = "~/Images/Recipes/Muffins/21.png"
             });
         }
         #endregion
