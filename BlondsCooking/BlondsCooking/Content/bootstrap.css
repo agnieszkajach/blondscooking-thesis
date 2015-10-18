@@ -36,6 +36,13 @@ summary {
   display: block;
 }
 
+.asd {
+    background: url('../Images/Recipes/Muffins/21.png') no-repeat center right;
+    display: block; 
+    height: 264px; 
+    width: 264px;
+}
+
 audio,
 canvas,
 video {

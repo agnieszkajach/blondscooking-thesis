@@ -10,7 +10,11 @@
 
 <div class="row">
     <div class="col-md-4">
-        <li>@Html.ActionLink("Category", "Category", "Home", new { id = 1 }, null)</li>
+        <p >
+            <a class="asd" href="@Url.Action("Category", "Home", new {id = 1}, null)"></a>
+            @*@Html.ActionLink("ad", "Category", "Home", new {id = 1}, null)*@
+        </p>
+       
     </div>
     @*<div class="col-md-4">
         <h2>Getting started</h2>
