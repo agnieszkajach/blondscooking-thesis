@@ -59,7 +59,7 @@ namespace BlondsCooking.Migrations
 
         private void AddOrUpdateRecipes(BlondsCookingContext context)
         {
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "CARROT CAKE #1",
                 Description = "In one bowl sift all-purpose flour with sugar, baking powder, soda powder and spices. In another one mix eggs with oil. Combine ingredients from two bowls. Add carrots, pineapple and nuts. Put pie in 20cm-diameter form and bake for about 45 minutes. Leave it to cool down. Cut it along. Mix well all ingredients for cream. Spread over the inside and the topping. Decorate top with nuts.",
@@ -70,7 +70,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Recipes/Cakes/1.png"               
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "CINNAMON ROLLS",
                 Description = "Sift flour. Heat up milk with sugar. Pour half of it to glass with yeast. Another half mix with butter and heat. Fluff eggs and add them to flour. Pour yeast and slowly add milk with butter. Mix precisely and knead it. Leave in warm place to grow. Roll it and smear with butter. Sprinkle with sugar and cinnamon. Collapse it and cut into pieces. Spread with fluffy eggs. Bake.",
@@ -81,7 +81,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cookies/2.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "CHOCOLATE AND BANANA",
                 Description = "In one bowl mash two bananas. Next add egg and vegetable oil. Mix them up. In another bowl mix flour, sugar, cacao, baking powder with baking soda. Combine ingredients from two bowls. At the end add chopped white chocolate. Leave a little bit for top decoration. Bake for about 20 minutes.",
@@ -92,7 +92,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/3.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "OREO",
                 Description = "In one bowl mix vegetable oil with yogurt and eggs. In another one mix flour with sugar and baking powder. Combine ingredients from two bowls. Add smashed oreo cookies at the end. Bake for about 20 minutes. Start decoration when muffins are cooled down. Decorate each one with whipped cream and one Oreo cookie.",
@@ -103,7 +103,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/4.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "GINGERBREAD",
                 Description = "In one bowl mix honey with eggs, buttermilk and vegetable oil. In another one mix flour with sugar, cacao, baking powder, baking soda and all spices. Combine ingredients from two bowls. Add grated apple and nuts at the end. Decorate top of each muffins with nuts. Bake for about 20 minutes.",
@@ -114,7 +114,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/5.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "SNICKERS",
                 Description = "In one bowl mix vegetable oil with yogurt and eggs. In another one mix flour with sugar and baking powder. Combine ingredients from two bowls. Chop snickers bars into dice and add them at the end. Leave a little bit for top decoration. Bake for about 20 minutes.",
@@ -125,7 +125,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/6.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "BLUEBERRY",
                 Description = "In one bowl mix vegetable oil with yogurt and eggs. In another one mix flour with sugar and baking powder. Combine ingredients from two bowls. At the end add chopped white chocolate and blueberries, but leaving a little bit for top decoration. Bake for about 20 minutes.",
@@ -136,7 +136,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/7.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "STRAWBERRY",
                 Description = "In one bowl mix vegetable oil with yogurt and eggs. In another one mix flour with sugar and baking powder. Combine ingredients from two bowls. At the end add chopped strawberries. Bake for about 20 minutes. ",
@@ -147,7 +147,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/8.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "SPINACH SPAGHETTI",
                 Description = "Cook pasta. Heat olive oil on pan. Add spinach, onion, garlic and spices. Add chopped salmon. At the and add yogurt. Mix with pasta.",
@@ -158,7 +158,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Diners/9.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "GREEN SMOOTHIE",
                 Description = "Using blender mix spinach with banana and apple juice.",
@@ -169,7 +169,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Shakes/10.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "RHUBARB CAKE",
                 Description = "Chop rhubarb and sprinkle it with sugar. Leave it for about one hour to get rid of water. Mix butter with sugar, cream, yolk and vanilla extract. At the end add two types of flour. Knead shortly and put in the fridge for about 30 minutes. Spread form with butter. Roll cake into the form. Bake for 10 minutes in 200 degrees. Prepare pudding: mix 0.5 cup of milk with flour, yolks, sugar and vanilla extract. Mix until it will be smooth. Boil 0.5 cup of milk and add prepared earlier mixture when milk will boil. Mix it often and be careful not to burn it. Put pudding on baked pie and rhubarb. Bake for about 25 minutes.",
@@ -180,7 +180,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cakes/11.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "OREO CHEESECAKE",
                 Description = "Oreo cookies (without cream!) mix with melted butter. Put it at the bottom of form. Mix cheese with mascarpone, condensed milk and sugar. Mix shortly. While mixing add albumen and potato flour. Add few crumbled oreo cookies. Put the mixture in the form. Bake it for about one hour. When it will be cool down put it in the fridge overnight. Decorate top with whipped cream and oreo cookies. ",
@@ -191,7 +191,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cakes/12.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "NUTELLA CHEESECAKE",
                 Description = "Mix crushed Oreo with butter and press it in the bottom of form. Melt gelatin in the water. Beat cream cheese and powdered sugar. Add nutella and mascarpone and mix well. Spread the cheesecake filling over the crust and leave it overnight in the fridge. You can decorate it with melted chocolate.",
@@ -202,7 +202,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cakes/13.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "BLUEBERRY SHAKE",
                 Description = "Add protein powder to buttermilk, shake well. Using blender mix it with blueberries.",
@@ -213,7 +213,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Shakes/14.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "RASPBERRY CAKE",
                 Description = "Mix butter with sugar, cream, yolk and vanilla extract. At the end add two types of flour. Knead shortly and put in the fridge for about 30 minutes. Spread form with butter. Roll cake into the form. Bake for 10 minutes in 200 degrees. Prepare pudding: mix 0.5 cup of milk with flour, yolks, sugar and vanilla extract. Mix until it will be smooth. Boil 0.5 cup of milk and add prepared earlier mixture when milk will boil. Mix it often and be careful not to burn it. Put on baked pie pudding and raspberries. Cover it with almonds. Bake for about 25 minutes.",
@@ -224,7 +224,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cakes/15.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "PEANUT CHEESE CAKE",
                 Description = "Mix peanut butter with cookies. Put it at the bottom of 30cm-diameter form. Mix well cheese with mascarpone, heavy cream and vanilla extract. Add eggs and mix again. At the end add two types of flour, sugar powder and melted white chocolate. Put mixture in the form. Bake in 220 degrees for 15 minutes, and for the next two hours lower the temperature to 100 degrees and bake for next 2 hours. When the cake will cool down decorate with dulce de leche and nuts.",
@@ -235,7 +235,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cakes/16.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "RHUBARB WITH PUDDING",
                 Description = "Chop rhubarb and sprinkle it with sugar. Leave it for about one hour to get rid of water.  Prepare pudding: mix 0.5 cup of milk with flour, yolks, sugar and vanilla extract. Mix until it will be smooth. Boil 0.5 cup of milk and add prepared earlier mixture when milk will boil. Mix it often and be careful not to burn it. In one bowl mix melted butter with egg. Add vanilla extract, egg and yogurt. Mix it well. Add sieved flour with baking powder. Mix everything up. When putting in form do it in layers. Firstly put pie, then pudding and rhubarb. Cover it with pie. Decorate each muffin with rhubarb. Bake for about 20 minutes.",
@@ -246,7 +246,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/17.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "MOLE MOUND",
                 Description = "In one bowl add sieved flour, baking powder, soda powder, cocoa and sugar. In another one mix egg with milk and buttermilk. Combine ingredients from two bowls. Bake for about 20 minutes. When muffins will be cool down make in each one hole with spoon – don’t throw the pie away! Chop banana in small pieces and sprinkle with lemon juice. Melt gelatin in 3 table spoons of hot water and leave to cool down. Whip cream and in the end add sugar powder and gelatin. Mix well. In each muffin hole put firstly chopped banana then add cream and cover with pie. Put in fridge for about one hour. ",
@@ -257,7 +257,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Muffins/18.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "CARROT CAKE #2",
                 Description = "Mix well eggs with sugar. While mixing add vegetable oil. Add partially flour with baking powder and soda powder. Add cinnamon and gingerbread spice. At the end add carrots with nuts. Fill 30cm-diameter form with pie and bake it for about 45 minutes. Leave it to cool down. Mix well all ingredients for topping and decorate the cake with it. Add orange for extra decoration. ",
@@ -268,7 +268,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Cakes/19.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "STRAWBERRY MILLET",
                 Description = "Boil millet in salted water (250ml) for about 10 minutes. Leave it covered to sink the water. Add honey, cinnamon and desiccated coconut. Smashed well strawberries. Put it in jar in layers: millet, strawberries and yogurt. Add favorite nuts.",
@@ -279,7 +279,7 @@ namespace BlondsCooking.Migrations
                 Image = "~/Images/Recipes/Dinners/20.png"
             });
 
-            context.Recipes.AddOrUpdate(new Recipe()
+            context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             {
                 Name = "BANANA & NUTS",
                 Description = "Mash bananas in one bowl. Add to them buttermilk, honey, eggs and vanilla extract. Mix them well. In another bowl mix flour with sugar, baking powder, soda powder and cinnamon. Combine ingredients from two bowls. Decorate each muffin with mashed nuts. Bake for about 30 minutes..",
