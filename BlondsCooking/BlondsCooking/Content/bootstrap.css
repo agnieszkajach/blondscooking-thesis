@@ -78,6 +78,16 @@ summary {
     height: 200px;
 }
 
+.img-recipe {
+    width: 200px;
+    height: 200px;
+}
+
+.img-category {
+    width: 200px;
+    height: 200px;
+}
+
 audio,
 canvas,
 video {
