@@ -36,11 +36,46 @@ summary {
   display: block;
 }
 
-.asd {
-    background: url('../Images/Recipes/Muffins/21.png') no-repeat center right;
-    display: block; 
-    height: 264px; 
-    width: 264px;
+.muffin-category {
+    background: url('../Images/Layout/Categories/muffins-czarny.png') no-repeat center right;
+    display: block;
+    background-size: contain;
+    height: 200px;
+}
+
+.cookie-category {
+    background: url('../Images/Layout/Categories/cookies-czarny.png') no-repeat center right;
+    display: block;
+    background-size: contain;
+    height: 200px;
+}
+
+.cake-category {
+    background: url('../Images/Layout/Categories/cakes-czarny.png') no-repeat center right;
+    display: block;
+    background-size: contain;
+    height: 200px;
+}
+
+.shake-category {
+    background: url('../Images/Layout/Categories/shake-czarny.png') no-repeat center right;
+    display: block;
+    background-size: contain;
+    height: 200px;
+}
+
+.dinner-category {
+    background: url('../Images/Layout/Categories/main-dishes-czarny.png') no-repeat center right;
+    display: block;
+    background-size: contain;
+    height: 200px;
+}
+
+.pancake-category {
+    background: url('../Images/Layout/Categories/pancakes-czarny.png') no-repeat center right;
+    display: block;
+    background-size: contain;
+    height: 200px;
 }
 
 audio,

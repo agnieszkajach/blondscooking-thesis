@@ -67,7 +67,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "45 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Cakes") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Recipes/Recipes/Cakes/1.png"               
+                Image = "~/Images/Recipes/Cakes/1.png"               
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -155,7 +155,7 @@ namespace BlondsCooking.Migrations
                 Temperature = "175",
                 Time = "20 min",
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dinners") == 0).Select(category => category.Id).FirstOrDefault(),
-                Image = "~/Images/Recipes/Diners/9.png"
+                Image = "~/Images/Recipes/Dinners/9.png"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
