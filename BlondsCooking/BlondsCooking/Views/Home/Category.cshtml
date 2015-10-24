@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.CategoryId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Image)
+            @Html.DisplayNameFor(model => model.Image)            
         </th>
         <th></th>
     </tr>
@@ -53,7 +53,8 @@
             @Html.DisplayFor(modelItem => item.CategoryId)
         </td>
         <td>
-            <img height="100" width="100" src="@Url.Content(item.Image)" alt="Image"/>
+            <a href="@Url.Action("Recipe", "Category", new {id = 1}, null)"><img height="100" width="100" src="@Url.Content(item.Image)" alt="Image" /></a>
+            
         </td>
     </tr>
 }
