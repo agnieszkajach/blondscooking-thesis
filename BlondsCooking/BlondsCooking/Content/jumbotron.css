@@ -13,13 +13,13 @@
     background-position: center center;
 }
 .slide1 {
-    background-image: url('../Images/Layout/Categories/muffins-czarny.png');
+    background-image: url('../Images/Layout/Jumbotron/muffiny.png');
 }
 .slide2 {
-    background-image: url('../Images/Layout/Categories/cookies-czarny.png');
+    background-image: url('../Images/Layout/Jumbotron/rollsy.png');
 }
 .slide3 {
-    background-image: url('../Images/Layout/Categories/cakes-czarny.png');
+    background-image: url('../Images/Layout/Jumbotron/tarta.png');
 }
 /* Carousel Fade Effect */
 .carousel.carousel-fade .item {
