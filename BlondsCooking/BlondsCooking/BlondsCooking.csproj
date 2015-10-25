@@ -194,7 +194,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Layout\Categories\cakes-bialy.png" />
     <Content Include="Images\Layout\Categories\cakes-czarny.png" />
-    <Content Include="Images\Layout\Categories\cookies-baly.png" />
+    <Content Include="Images\Layout\Categories\cookies-bialy.png" />
     <Content Include="Images\Layout\Categories\cookies-czarny.png" />
     <Content Include="Images\Layout\Categories\cup-cake-bialy.png" />
     <Content Include="Images\Layout\Categories\cup-cake-czarny.png" />

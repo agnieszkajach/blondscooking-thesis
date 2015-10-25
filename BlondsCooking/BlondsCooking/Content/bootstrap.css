@@ -36,44 +36,48 @@ summary {
   display: block;
 }
 
+footer {
+    color: #ffffff;
+}
+
 
 .muffin-category {
-    background: url('../Images/Layout/Categories/muffins-czarny.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/muffins-bialy.png') no-repeat center right;
     display: block;
     background-size: contain;
     height: 200px;
 }
 
 .cookie-category {
-    background: url('../Images/Layout/Categories/cookies-czarny.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/cookies-bialy.png') no-repeat center right;
     display: block;
     background-size: contain;
     height: 200px;
 }
 
 .cake-category {
-    background: url('../Images/Layout/Categories/cakes-czarny.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/cakes-bialy.png') no-repeat center right;
     display: block;
     background-size: contain;
     height: 200px;
 }
 
 .shake-category {
-    background: url('../Images/Layout/Categories/shake-czarny.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/shake-bialy.png') no-repeat center right;
     display: block;
     background-size: contain;
     height: 200px;
 }
 
 .dinner-category {
-    background: url('../Images/Layout/Categories/main-dishes-czarny.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/main-dishes-bialy.png') no-repeat center right;
     display: block;
     background-size: contain;
     height: 200px;
 }
 
 .pancake-category {
-    background: url('../Images/Layout/Categories/pancakes-czarny.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/pancake-bialy.png') no-repeat center right;
     display: block;
     background-size: contain;
     height: 200px;
@@ -85,8 +89,18 @@ summary {
 }
 
 .img-category {
-    width: 200px;
-    height: 200px;
+    width: 22vw;
+    height: auto;
+}
+
+.recipe-title {
+    font-family: "Segoe UI", Arial;
+    font-size: 20pt;
+    color: #FFFA0C;
+}
+
+.category {
+    margin-bottom: 20px;
 }
 
 audio,
@@ -368,7 +382,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #131313;
 }
 
 input,
