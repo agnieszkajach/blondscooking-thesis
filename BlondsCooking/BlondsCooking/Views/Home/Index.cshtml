@@ -2,11 +2,53 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<nav class="navbar navbar-default transparent navbar-static-top" role="navigation" id="navbar-main">
+    <div class="container">
+        @*<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navCollapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="fa fa-chevron-down"></span> <b>Menu</b>
+            </button>
+            <a class="navbar-brand" href="#">Your Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>*@
+    </div>
+</nav>
+<!--end nav bar-->
+<!--begin bg-carousel-->
+<div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="slide1"></div>
+        </div>
+        <div class="item">
+            <div class="slide2"></div>
+        </div>
+        <div class="item">
+            <div class="slide3"></div>
+        </div>
+    </div><!-- .carousel-inner -->
+    @*<div class="container carousel-overlay text-center">
+        <h1>Get Kittens Free All Week Long</h1>
+        <p class="lead">Special orders also available upon request.  Check out our pricing.</p>
+        <a class="btn btn-lg btn-success fp-buttons" href="#">
+            <span class="fa fa-dollar"></span> Get Pricing
+        </a>
+        <a class="btn btn-lg btn-success fp-buttons" href="#">
+            <span class="fa fa-check"></span> Sign Up
+        </a>
+    </div>*@
+</div><!-- .carousel -->
+<!--end bg-carousel-->
 
 <div class="row">
     <div class="col-md-4">
