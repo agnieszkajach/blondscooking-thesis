@@ -27,27 +27,27 @@ namespace BlondsCooking.Migrations
 
         private void AddOrUpdateCategories(BlondsCookingContext context)
         {
-            context.Categories.AddOrUpdate(new Category()
+            context.Categories.AddOrUpdate(category => category.Name, new Category()
             {
                 Name = "Muffins"
             });
-            context.Categories.AddOrUpdate(new Category()
+            context.Categories.AddOrUpdate(category => category.Name, new Category()
             {
                 Name = "Cookies"
             });
-            context.Categories.AddOrUpdate(new Category()
+            context.Categories.AddOrUpdate(category => category.Name, new Category()
             {
                 Name = "Cakes"
             });
-            context.Categories.AddOrUpdate(new Category()
+            context.Categories.AddOrUpdate(category => category.Name, new Category()
             {
                 Name = "Shakes"
             });
-            context.Categories.AddOrUpdate(new Category()
+            context.Categories.AddOrUpdate(category => category.Name, new Category()
             {
                 Name = "Dinners"
             });
-            context.Categories.AddOrUpdate(new Category()
+            context.Categories.AddOrUpdate(category => category.Name, new Category()
             {
                 Name = "Pancakes"
             });
