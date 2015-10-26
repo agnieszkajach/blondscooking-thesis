@@ -21,6 +21,10 @@ namespace BlondsCooking.Controllers
         {
             context = new BlondsCookingContext();
             Recipe model = context.Recipes.FirstOrDefault(recipe => recipe.Id == id);
+            if (model == null)
+            {
+                return View("Error");
+            }
             return View(model);
         }
     }

@@ -34,6 +34,10 @@ namespace BlondsCooking.Controllers
         {
             context = new BlondsCookingContext();
             IEnumerable<Recipe> model = context.Recipes.Where(recipe => recipe.CategoryId == id);
+            if (context.Categories.FirstOrDefault(category => category.Id == id) == null)
+            {
+                return View("Error");
+            }
             return View(model);
         }
     }
