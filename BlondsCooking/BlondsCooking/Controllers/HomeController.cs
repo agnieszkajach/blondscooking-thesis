@@ -10,7 +10,17 @@ namespace BlondsCooking.Controllers
 {
     public class HomeController : Controller
     {
-        private BlondsCookingContext context;
+        private IBlondsCookingContext context;
+
+        public HomeController()
+        {
+            this.context = new BlondsCookingContext();
+        }
+
+        public HomeController(IBlondsCookingContext context)
+        {
+            this.context = context;
+        }
         public ActionResult Index()
         {
             return View();
@@ -33,12 +43,21 @@ namespace BlondsCooking.Controllers
         public ActionResult Category(int id = 2)
         {
             context = new BlondsCookingContext();
-            IEnumerable<Recipe> model = context.Recipes.Where(recipe => recipe.CategoryId == id);
-            if (context.Categories.FirstOrDefault(category => category.Id == id) == null)
+            IEnumerable<Recipe> model = context.Query<Recipe>().Where(recipe => recipe.CategoryId == id);
+            if (context.Query<Category>().FirstOrDefault(category => category.Id == id) == null)
             {
                 return View("Error");
             }
             return View(model);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (context != null)
+            {
+                context.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

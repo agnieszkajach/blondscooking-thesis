@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BlondsCooking;
 using BlondsCooking.Controllers;
+using BlondsCooking.Models.Structure;
+using BlondsCooking.Tests.Fakes;
 
 namespace BlondsCooking.Tests.Controllers
 {
@@ -49,6 +51,20 @@ namespace BlondsCooking.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void Category()
+        {
+            var db = new FakeBlondsCookingContext();
+            db.AddSet(FakeData.Categories);
+            db.AddSet(FakeData.Recipes);
+            HomeController controller = new HomeController(db);
+
+            ViewResult result = controller.Category(1) as ViewResult;
+            IEnumerable<Recipe> model = result.Model as IEnumerable<Recipe>;
+            Assert.AreEqual(9, model.Count());
+
         }
     }
 }
