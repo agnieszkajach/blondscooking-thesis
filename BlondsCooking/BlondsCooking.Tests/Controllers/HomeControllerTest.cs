@@ -54,7 +54,7 @@ namespace BlondsCooking.Tests.Controllers
         }
 
         [TestMethod]
-        public void Category()
+        public void CategoryReturnsCorrectNumberOfRecipesInSelectedCategory()
         {
             var db = new FakeBlondsCookingContext();
             db.AddSet(FakeData.Categories);
@@ -64,6 +64,20 @@ namespace BlondsCooking.Tests.Controllers
             ViewResult result = controller.Category(1) as ViewResult;
             IEnumerable<Recipe> model = result.Model as IEnumerable<Recipe>;
             Assert.AreEqual(9, model.Count());
+
+        }
+
+        [TestMethod]
+        public void CategoryReturnErrorPageWhenCannotFindSelectedCategory()
+        {
+            var db = new FakeBlondsCookingContext();
+            db.AddSet(FakeData.Categories);
+            db.AddSet(FakeData.Recipes);
+            HomeController controller = new HomeController(db);
+
+            ViewResult result = controller.Category(100) as ViewResult;
+            
+            Assert.AreEqual("Error", result.ViewName);
 
         }
     }
