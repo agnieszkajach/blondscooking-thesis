@@ -193,6 +193,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Layout\bon-appetit-biale.png" />
+    <Content Include="Images\Layout\bon-appetit-czarny.png" />
     <Content Include="Images\Layout\Categories\cakes-bialy.png" />
     <Content Include="Images\Layout\Categories\cakes-czarny.png" />
     <Content Include="Images\Layout\Categories\cookies-bialy.png" />
