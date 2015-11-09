@@ -287,7 +287,6 @@
     <Content Include="Views\Home\Category.cshtml" />
     <None Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Recipe.cshtml" />
-    <Content Include="Views\Shared\Error404.cshtml" />
     <None Include="Views\Error\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
