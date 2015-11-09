@@ -15,7 +15,8 @@ namespace BlondsCooking
         {
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
-                var asd = context.Categories.Count();
+                var categories = context.Categories.Count();
+                var recipes = context.Recipes.Count();
             }
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
