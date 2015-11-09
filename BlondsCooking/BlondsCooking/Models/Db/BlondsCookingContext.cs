@@ -10,9 +10,9 @@ namespace BlondsCooking.Models.Db
 {
     public class BlondsCookingContext : DbContext, IBlondsCookingContext
     {
-        public BlondsCookingContext() : base("AzureConnection")
+        public BlondsCookingContext() : base("DefaultConnection")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlondsCookingContext, Migrations.Configuration>("AzureConnection"));
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlondsCookingContext, Migrations.Configuration>("DefaultConnection"));
         }
 
         public DbSet<Category> Categories { get; set; }
