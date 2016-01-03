@@ -15,29 +15,24 @@ namespace LinearRegression
             FileHelper fileHelper = new FileHelper();
             var values = fileHelper.ReadFromFile(PathToFile);
 
-            double[][] inputs = values.Item1;
+            double[][] inputs = values.Item1.Take(15).ToArray();
 
-            double[][] outputs = values.Item2;
+            double[][] outputs = values.Item2.Take(15).ToArray();
 
             MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
 
             double error = regression.Regress(inputs, outputs);
-            var actual0 = regression.Compute(new double[] { 5.0, 2.0, 1.0, 5.0, 3.0, 1.0 });
-            var actual1 = regression.Compute(new double[] { 3.0, 3.0, 3.0, 4.0, 4.0, 3.0 });
-            var actual2 = regression.Compute(new double[] { 4.0, 4.0, 1.0, 3.0, 4.0, 3.0 });
-            var actual3 = regression.Compute(new double[] { 2.0, 3.0, 1.0, 5.0, 4.0, 2.0 });
-            var actual4 = regression.Compute(new double[] { 5.0, 2.0, 2.0, 5.0, 5.0, 0.0 });
+            var actual15 = regression.Compute(values.Item1[15]);
+            var actual16 = regression.Compute(values.Item1[16]);
+            var actual17 = regression.Compute(values.Item1[17]);
+            var actual18 = regression.Compute(values.Item1[18]);
+            var actual19 = regression.Compute(values.Item1[19]);
 
-
-            //double[] inputs = { 10, 20, 30, 40, 50 },
-            //double[] outputs = { 20, 40, 60, 80, 100 },
-            //SimpleLinearRegression simpleLinearRegression = new SimpleLinearRegression(),
-            //double sum = simpleLinearRegression.Regress(inputs, outputs),
-            //double error = sum/10,
-
-
-            //double a = simpleLinearRegression.Slope,
-            //double b = simpleLinearRegression.Intercept,
+            var error15 = Math.Abs(values.Item2[15][0] - actual15[0]);
+            var error16 = Math.Abs(values.Item2[16][0] - actual16[0]);
+            var error17 = Math.Abs(values.Item2[17][0] - actual17[0]);
+            var error18 = Math.Abs(values.Item2[18][0] - actual18[0]);
+            var error19 = Math.Abs(values.Item2[19][0] - actual19[0]);
         }
     }
 }
