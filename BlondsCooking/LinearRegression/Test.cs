@@ -9,45 +9,15 @@ namespace LinearRegression
 {
     public class Test
     {
+        public static readonly string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\meal_0.csv";
         public void TestMethod()
         {
-            double[][] inputs =
-            {
-                new double[] {4.0, 4.0, 2.0, 4.0, 5.0, 3.0},
-                new double[] {1.0, 3.0, 1.0, 4.0, 4.0, 3.0},
-                new double[] {4.0, 3.0, 1.0, 4.0, 5.0, 3.0},
-                new double[] {4.0, 2.0, 1.0, 4.0, 5.0, 2.0},
-                new double[] {5.0, 2.0, 1.0, 5.0, 5.0, 3.0},
-                new double[] {5.0, 2.0, 1.0, 2.0, 5.0, 1.0},
-                new double[] {5.0, 3.0, 0.0, 4.0, 4.0, 1.0},
-                new double[] {4.0, 3.0, 1.0, 3.0, 3.0, 3.0},
-                new double[] {5.0, 3.0, 4.0, 3.0, 5.0, 4.0},
-                new double[] {3.0, 2.0, 1.0, 3.0, 4.0, 2.0},
-                new double[] {4.0, 1.0, 1.0, 3.0, 5.0, 3.0},
-                new double[] {4.0, 5.0, 2.0, 4.0, 5.0, 3.0},
-                new double[] {3.0, 3.0, 2.0, 3.0, 5.0, 2.0},
-                //new double[] {5.0, 3.0, 0.0, 4.0, 5.0, 1.0},
-                new double[] {4.0, 4.0, 3.0, 5.0, 3.0, 5.0},
-            };
+            FileHelper fileHelper = new FileHelper();
+            var values = fileHelper.ReadFromFile(PathToFile);
 
-            double[][] outputs =
-            {
-                new double[] {5.0},
-                new double[] {1.0},
-                new double[] {5.0},
-                new double[] {5.0},
-                new double[] {5.0},
-                new double[] {5.0},
-                new double[] {5.0},
-                new double[] {4.0},
-                new double[] {5.0},
-                new double[] {5.0},
-                new double[] {5.0},
-                new double[] {4.0},
-                new double[] {4.0},
-                //new double[] {0.0},
-                new double[] {2.0},
-            };
+            double[][] inputs = values.Item1;
+
+            double[][] outputs = values.Item2;
 
             MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
 
