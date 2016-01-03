@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using BlondsCooking.Models.Db;
+using LinearRegression;
 
 namespace BlondsCooking
 {
@@ -13,6 +14,8 @@ namespace BlondsCooking
     {
         protected void Application_Start()
         {
+            Test test = new Test();
+            test.TestMethod();
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
                 var categories = context.Categories.Count();

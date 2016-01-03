@@ -11,15 +11,63 @@ namespace LinearRegression
     {
         public void TestMethod()
         {
-            double[] inputs = { 80, 60, 10, 20, 30 };
-            double[] outputs = { 20, 40, 30, 50, 60 };
-            SimpleLinearRegression simpleLinearRegression = new SimpleLinearRegression();
-            simpleLinearRegression.Regress(inputs, outputs);
+            double[][] inputs =
+            {
+                new double[] {4.0, 4.0, 2.0, 4.0, 5.0, 3.0},
+                new double[] {1.0, 3.0, 1.0, 4.0, 4.0, 3.0},
+                new double[] {4.0, 3.0, 1.0, 4.0, 5.0, 3.0},
+                new double[] {4.0, 2.0, 1.0, 4.0, 5.0, 2.0},
+                new double[] {5.0, 2.0, 1.0, 5.0, 5.0, 3.0},
+                new double[] {5.0, 2.0, 1.0, 2.0, 5.0, 1.0},
+                new double[] {5.0, 3.0, 0.0, 4.0, 4.0, 1.0},
+                new double[] {4.0, 3.0, 1.0, 3.0, 3.0, 3.0},
+                new double[] {5.0, 3.0, 4.0, 3.0, 5.0, 4.0},
+                new double[] {3.0, 2.0, 1.0, 3.0, 4.0, 2.0},
+                new double[] {4.0, 1.0, 1.0, 3.0, 5.0, 3.0},
+                new double[] {4.0, 5.0, 2.0, 4.0, 5.0, 3.0},
+                new double[] {3.0, 3.0, 2.0, 3.0, 5.0, 2.0},
+                //new double[] {5.0, 3.0, 0.0, 4.0, 5.0, 1.0},
+                new double[] {4.0, 4.0, 3.0, 5.0, 3.0, 5.0},
+            };
 
-            double y = simpleLinearRegression.Compute(85);
+            double[][] outputs =
+            {
+                new double[] {5.0},
+                new double[] {1.0},
+                new double[] {5.0},
+                new double[] {5.0},
+                new double[] {5.0},
+                new double[] {5.0},
+                new double[] {5.0},
+                new double[] {4.0},
+                new double[] {5.0},
+                new double[] {5.0},
+                new double[] {5.0},
+                new double[] {4.0},
+                new double[] {4.0},
+                //new double[] {0.0},
+                new double[] {2.0},
+            };
 
-            double a = simpleLinearRegression.Slope;
-            double b = simpleLinearRegression.Intercept;
+            MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
+
+            double error = regression.Regress(inputs, outputs);
+            var actual0 = regression.Compute(new double[] { 5.0, 2.0, 1.0, 5.0, 3.0, 1.0 });
+            var actual1 = regression.Compute(new double[] { 3.0, 3.0, 3.0, 4.0, 4.0, 3.0 });
+            var actual2 = regression.Compute(new double[] { 4.0, 4.0, 1.0, 3.0, 4.0, 3.0 });
+            var actual3 = regression.Compute(new double[] { 2.0, 3.0, 1.0, 5.0, 4.0, 2.0 });
+            var actual4 = regression.Compute(new double[] { 5.0, 2.0, 2.0, 5.0, 5.0, 0.0 });
+
+
+            //double[] inputs = { 10, 20, 30, 40, 50 },
+            //double[] outputs = { 20, 40, 60, 80, 100 },
+            //SimpleLinearRegression simpleLinearRegression = new SimpleLinearRegression(),
+            //double sum = simpleLinearRegression.Regress(inputs, outputs),
+            //double error = sum/10,
+
+
+            //double a = simpleLinearRegression.Slope,
+            //double b = simpleLinearRegression.Intercept,
         }
     }
 }
