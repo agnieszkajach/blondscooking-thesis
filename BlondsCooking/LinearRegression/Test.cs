@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,30 +10,37 @@ namespace LinearRegression
 {
     public class Test
     {
-        public static readonly string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\meal_0.csv";
+        public string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\meal_0.csv";
+        public string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\log.txt";
         public void TestMethod()
         {
             FileHelper fileHelper = new FileHelper();
-            var values = fileHelper.ReadFromFile(PathToFile);
+            using (StreamWriter writer = File.AppendText(PathToLogFile))
+            {
+                for (int i = 0; i < 25; i++)
+                {
+                    writer.WriteLine("Meal {0}", i);
+                    var values = fileHelper.ReadFromFile(PathToFile);
 
-            double[][] inputs = values.Item1.Take(15).ToArray();
+                    double[][] inputs = values.Item1.Take(15).ToArray();
 
-            double[][] outputs = values.Item2.Take(15).ToArray();
+                    double[][] outputs = values.Item2.Take(15).ToArray();
 
-            MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
+                    MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
 
-            double error = regression.Regress(inputs, outputs);
-            var actual15 = regression.Compute(values.Item1[15]);
-            var actual16 = regression.Compute(values.Item1[16]);
-            var actual17 = regression.Compute(values.Item1[17]);
-            var actual18 = regression.Compute(values.Item1[18]);
-            var actual19 = regression.Compute(values.Item1[19]);
+                    double errorRegression = regression.Regress(inputs, outputs);
+                    for (int j = 15; j < 20; j++)
+                    {
+                        var actual = regression.Compute(values.Item1[j]);
+                        var error = Math.Abs(values.Item2[j][0] - actual[0]);
+                        writer.WriteLine("Actual {0}, Expected {1}, Error {2}", Math.Round(actual[0]), Math.Round(values.Item2[j][0]), Math.Round(error));
+                    }
 
-            var error15 = Math.Abs(values.Item2[15][0] - actual15[0]);
-            var error16 = Math.Abs(values.Item2[16][0] - actual16[0]);
-            var error17 = Math.Abs(values.Item2[17][0] - actual17[0]);
-            var error18 = Math.Abs(values.Item2[18][0] - actual18[0]);
-            var error19 = Math.Abs(values.Item2[19][0] - actual19[0]);
+                    PathToFile = PathToFile.Replace(i.ToString(), (i + 1).ToString());
+                }
+            }
+            
+            
         }
     }
 }
