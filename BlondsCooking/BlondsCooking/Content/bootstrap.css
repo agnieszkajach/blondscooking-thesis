@@ -42,45 +42,45 @@ footer {
 
 
 .muffin-category {
-    background: url('../Images/Layout/Categories/muffins-bialy.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/muffins-bialy.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 200px;
+    height: 250px;
 }
 
 .cookie-category {
-    background: url('../Images/Layout/Categories/cookies-bialy.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/cookies-bialy.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 200px;
+    height: 250px;
 }
 
 .cake-category {
-    background: url('../Images/Layout/Categories/cakes-bialy.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/cakes-bialy.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 200px;
+    height: 250px;
 }
 
 .shake-category {
-    background: url('../Images/Layout/Categories/shake-bialy.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/shake-bialy.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 200px;
+    height: 250px;
 }
 
 .dinner-category {
-    background: url('../Images/Layout/Categories/main-dishes-bialy.png') no-repeat center right;
+    background: url('../Images/Layout/Categories/main-dishes-bialy.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 200px;
+    height: 250px;
 }
 
 .pancake-category {
-    background: url('../../Images/Layout/Categories/pancake-bialy.png') no-repeat center right;
+    background: url('../../Images/Layout/Categories/pancake-bialy.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 200px;
+    height: 250px;
 }
 
 .img-recipe {
