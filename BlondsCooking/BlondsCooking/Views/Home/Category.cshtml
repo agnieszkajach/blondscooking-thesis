@@ -8,15 +8,23 @@
 
 @foreach (var item in Model)
 {
-    <div class="col-md-4 category">
-        <p>
-            <a href="@Url.Action("Recipe", "Category", new {id = item.Id}, null)">
-                <img class="img-category" src="@Url.Content(item.Image)" alt="Image"/>
-            </a>
-        </p>
+    <div class="col-md-3 category">
+        <a href="@Url.Action("Recipe", "Category", new {id = item.Id}, null)">
+            <div class="img-category">
+                <img class="img-responsive img-full" src="@Url.Content(item.Image)" alt="" />
+            </div>
+        </a>
         <p class="recipe-title">
             @item.Name
         </p>
+        @*<p>
+                <a href="@Url.Action("Recipe", "Category", new {id = item.Id}, null)">
+                    <img class="img-category" src="@Url.Content(item.Image)" alt="Image"/>
+                </a>
+            </p>
+            <p class="recipe-title">
+                @item.Name
+            </p>*@
     </div>
 }
 @*<table class="table">

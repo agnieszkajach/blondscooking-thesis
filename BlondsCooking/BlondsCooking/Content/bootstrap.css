@@ -89,8 +89,9 @@ footer {
 }
 
 .img-category {
-    width: 22vw;
-    height: auto;
+    display: block;
+    background-size: contain;
+    margin: 2%
 }
 
 .recipe-title {
