@@ -66,6 +66,12 @@
         <dd>
             <img class="img-recipe" src="@Url.Content(Model.Image)" alt="Image"/>
         </dd>
-
     </dl>
+
+    @if (Request.IsAuthenticated)
+    {
+        <div>
+            Logged user
+        </div>
+    }
 </div>
