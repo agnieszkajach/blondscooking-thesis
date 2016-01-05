@@ -95,8 +95,9 @@ footer {
 }
 
 .recipe-title {
+    margin-left: 2%;
     font-family: "Segoe UI", Arial;
-    font-size: 20pt;
+    font-size: 3vh;
     color: #FFFA0C;
 }
 
