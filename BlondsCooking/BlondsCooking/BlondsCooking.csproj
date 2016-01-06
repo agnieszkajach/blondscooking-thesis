@@ -230,6 +230,7 @@
     <Content Include="Images\Layout\Jumbotron\rollsy.png" />
     <Content Include="Images\Layout\Jumbotron\muffiny.png" />
     <Content Include="Images\Layout\Jumbotron\tarta.png" />
+    <Content Include="Images\Layout\Logo\logo-bialy.png" />
     <Content Include="Images\Recipes\Cakes\1.png" />
     <Content Include="Images\Recipes\Cakes\11.png" />
     <Content Include="Images\Recipes\Cakes\12.png" />

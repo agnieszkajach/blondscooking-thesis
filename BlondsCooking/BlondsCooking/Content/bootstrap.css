@@ -91,7 +91,7 @@ footer {
 .img-category {
     display: block;
     background-size: contain;
-    margin: 2%
+    margin: 2%;
 }
 
 .recipe-title {
@@ -4445,11 +4445,19 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-bottom: 0;
 }
 
+.logo {
+    height: 4vh;
+    width: auto;
+    padding-bottom: 1px;
+}
+
 .navbar-brand {
     float: left;
     padding: 15px 15px;
     font-size: 18px;
     line-height: 20px;
+    height: 60px;
+    width: 6vh;
 }
 
     .navbar-brand:hover,
@@ -4499,7 +4507,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     .navbar-nav > li > a {
         padding-top: 10px;
         padding-bottom: 10px;
-        line-height: 20px;
+        line-height: 35px;
     }
 
 @media (max-width: 767px) {
