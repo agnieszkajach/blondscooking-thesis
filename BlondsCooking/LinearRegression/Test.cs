@@ -35,6 +35,11 @@ namespace LinearRegression
                         var error = Math.Abs(values.Item2[j][0] - actual[0]);
                         writer.WriteLine("Actual {0}, Expected {1}, Error {2}", Math.Round(actual[0]), Math.Round(values.Item2[j][0]), Math.Round(error));
                     }
+                    for (int k = 0; k < regression.Coefficients.Length; k++)
+                    {
+                        writer.WriteLine("x_{0} = {1} ; ", k, regression.Coefficients[k,0]);
+                    }
+                    writer.WriteLine();
 
                     PathToFile = PathToFile.Replace(i.ToString(), (i + 1).ToString());
                 }
