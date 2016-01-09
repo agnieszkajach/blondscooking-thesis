@@ -22,14 +22,14 @@ namespace LinearRegression
                     writer.WriteLine("Meal {0}", i);
                     var values = fileHelper.ReadFromFile(PathToFile);
 
-                    double[][] inputs = values.Item1.Take(15).ToArray();
+                    double[][] inputs = values.Item1.Take(20).ToArray();
 
-                    double[][] outputs = values.Item2.Take(15).ToArray();
+                    double[][] outputs = values.Item2.Take(20).ToArray();
 
                     MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
 
                     double errorRegression = regression.Regress(inputs, outputs);
-                    for (int j = 15; j < 20; j++)
+                    for (int j = 20; j < 27; j++)
                     {
                         var actual = regression.Compute(values.Item1[j]);
                         var error = Math.Abs(values.Item2[j][0] - actual[0]);

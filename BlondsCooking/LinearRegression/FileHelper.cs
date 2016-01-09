@@ -12,8 +12,8 @@ namespace LinearRegression
         public Tuple<double[][], double[][]> ReadFromFile(string path)
         {
             Tuple<double[][], double[][]> temp;
-            double[][] xInAllLines = new double[20][];
-            double[][] yInAllLines = new double[20][];
+            double[][] xInAllLines = new double[27][];
+            double[][] yInAllLines = new double[27][];
             using (StreamReader streamReader = new StreamReader(path))
             {
                 string allLines = streamReader.ReadToEnd();
