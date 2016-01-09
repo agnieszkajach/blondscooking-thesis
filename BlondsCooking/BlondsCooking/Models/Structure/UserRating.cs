@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BlondsCooking.Models.Structure
 {
-    [Table("Categories")]
+    [Table("UserRatings")]
     public class UserRating
     {
         [Key]
