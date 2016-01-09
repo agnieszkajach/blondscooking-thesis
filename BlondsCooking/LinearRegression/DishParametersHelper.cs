@@ -8,12 +8,13 @@ using Accord.Statistics.Models.Regression.Linear;
 
 namespace LinearRegression
 {
-    public class Test
+    public class DishParametersHelper
     {
         public string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\meal_0.csv";
         public string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\log.txt";
-        public void TestMethod()
+        public List<double[]> CalculateParameterForDishes()
         {
+            List<double[]> coefficients = new List<double[]>();
             FileHelper fileHelper = new FileHelper();
             using (StreamWriter writer = File.AppendText(PathToLogFile))
             {
@@ -35,17 +36,20 @@ namespace LinearRegression
                         var error = Math.Abs(values.Item2[j][0] - actual[0]);
                         writer.WriteLine("Actual {0}, Expected {1}, Error {2}", Math.Round(actual[0]), Math.Round(values.Item2[j][0]), Math.Round(error));
                     }
+                    double[] coef = new double[6];
                     for (int k = 0; k < regression.Coefficients.Length; k++)
                     {
                         writer.WriteLine("x_{0} = {1} ; ", k, regression.Coefficients[k,0]);
+                        coef[k] = regression.Coefficients[k, 0];
                     }
                     writer.WriteLine();
+                    coefficients.Add(coef);
 
                     PathToFile = PathToFile.Replace(i.ToString(), (i + 1).ToString());
                 }
             }
-            
-            
+            return coefficients;         
         }
+
     }
 }

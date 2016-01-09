@@ -14,8 +14,8 @@ namespace BlondsCooking
     {
         protected void Application_Start()
         {
-            Test test = new Test();
-            test.TestMethod();
+            //Test test = new Test();
+            //test.TestMethod();
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
                 var categories = context.Categories.Count();
