@@ -29,5 +29,17 @@ namespace BlondsCooking.Models.Structure
         public Category Category { get; set; }
 
         public string Image { get; set; }
+
+        public double SpicyValue { get; set; }
+
+        public double SaltyValue { get; set; }
+
+        public double BitterValue { get; set; }
+
+        public double SweetValue { get; set; }
+
+        public double MeatValue { get; set; }
+
+        public double SourValue { get; set; }
     }
 }
