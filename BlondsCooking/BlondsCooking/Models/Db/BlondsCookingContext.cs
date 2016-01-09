@@ -17,6 +17,9 @@ namespace BlondsCooking.Models.Db
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<User> Users { get; set; }       
+        public DbSet<UserRating> UserRatings { get; set; }  
+
         public IQueryable<T> Query<T>() where T : class
         {
             return Set<T>();

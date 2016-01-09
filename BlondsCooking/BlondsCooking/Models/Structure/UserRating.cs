@@ -8,13 +8,21 @@ using System.Web;
 namespace BlondsCooking.Models.Structure
 {
     [Table("Categories")]
-    public class Category
+    public class UserRating
     {
         [Key]
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
 
-        public ICollection<Recipe> Recipes { get; set; } 
+        public User User { get; set; }
+
+        [ForeignKey("Recipe")]
+        public int RecipeId { get; set; }
+
+        public Recipe Recipe { get; set; }
+
+        public double Score { get; set; }
     }
 }
