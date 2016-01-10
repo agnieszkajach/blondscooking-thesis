@@ -192,6 +192,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\RecommendationHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Db\BlondsCookingContext.cs" />
@@ -335,6 +336,8 @@
     <Content Include="Views\Category\Recipe.cshtml" />
     <None Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Home\Recommendation.cshtml" />
+    <Content Include="Views\Shared\NotEnoughRates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

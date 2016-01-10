@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BlondsCooking.Helpers;
 using BlondsCooking.Models.Db;
 using BlondsCooking.Models.Structure;
+using Microsoft.AspNet.Identity;
 
 namespace BlondsCooking.Controllers
 {
@@ -49,6 +51,16 @@ namespace BlondsCooking.Controllers
                 return View("Error");
             }
             return View(model);
+        }
+        
+        public ActionResult Recommendation()
+        {
+            RecommendationHelper helper = new RecommendationHelper();
+            if (helper.CanGetRecommendation(User.Identity.GetUserId()))
+            {
+                return View();
+            }
+            return View("NotEnoughRates");
         }
 
         protected override void Dispose(bool disposing)
