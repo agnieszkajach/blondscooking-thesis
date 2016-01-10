@@ -53,6 +53,7 @@ namespace BlondsCooking.Controllers
             return View(model);
         }
         
+        [Authorize]
         public ActionResult Recommendation()
         {
             RecommendationHelper helper = new RecommendationHelper();
