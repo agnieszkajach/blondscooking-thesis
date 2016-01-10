@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using BlondsCooking.Models;
 using BlondsCooking.Models.Db;
 using BlondsCooking.Models.Structure;
+using Microsoft.AspNet.Identity;
 
 namespace BlondsCooking.Controllers
 {
@@ -51,6 +52,7 @@ namespace BlondsCooking.Controllers
                     {
                         RecipeId = id,
                         Rate = rate,
+                        UserId = User.Identity.GetUserId()
                     });
                     context.SaveChanges();
                 } 

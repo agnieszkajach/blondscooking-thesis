@@ -14,7 +14,7 @@ namespace BlondsCooking.Models.Structure
         public int Id { get; set; }
 
         [ForeignKey("User")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public User User { get; set; }
 
@@ -23,6 +23,6 @@ namespace BlondsCooking.Models.Structure
 
         public Recipe Recipe { get; set; }
 
-        public double Score { get; set; }
+        public double Rate { get; set; }
     }
 }

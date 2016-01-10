@@ -70,24 +70,19 @@
 
     @if (Request.IsAuthenticated)
     {
-        <div>
-            Logged user
-        </div>
-    }
-
-
-    @using (Html.BeginForm("Rate", "Category", new { id = Model.Id, rate = Model.Rate }))
-    {
-        <div>
-            <div class="col-md-offset-2 col-md-10">
-                @Html.DropDownListFor(m => m.Rate, new SelectList(Model.RatesList.Items), new {@class = "form-control"})
-            </div>
-            <div class="form-group">
+        @using (Html.BeginForm("Rate", "Category", new { id = Model.Id, rate = Model.Rate }))
+        {
+            <div>
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Apply" class="btn btn-default"/>
+                    @Html.DropDownListFor(m => m.Rate, new SelectList(Model.RatesList.Items), new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Apply" class="btn btn-default" />
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     }
 
     <div>
