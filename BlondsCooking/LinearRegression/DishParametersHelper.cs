@@ -16,7 +16,7 @@ namespace LinearRegression
         {
             List<double[]> coefficients = new List<double[]>();
             FileHelper fileHelper = new FileHelper();
-            using (StreamWriter writer = File.AppendText(PathToLogFile))
+            using (StreamWriter writer = File.AppendText(PathToLogFile)) 
             {
                 for (int i = 0; i < 25; i++)
                 {

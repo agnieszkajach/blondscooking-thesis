@@ -4,9 +4,11 @@ using System.Linq;
 using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
+using BlondsCooking.Helpers;
 using BlondsCooking.Models;
 using BlondsCooking.Models.Db;
 using BlondsCooking.Models.Structure;
+using LinearRegression;
 using Microsoft.AspNet.Identity;
 
 namespace BlondsCooking.Controllers
@@ -44,6 +46,7 @@ namespace BlondsCooking.Controllers
 
         public void Rate(int id = 0, int rate = 0)
         {
+            RecommendationHelper helper = new RecommendationHelper();
             if (id != 0)
             {
                 using (BlondsCookingContext context = new BlondsCookingContext())
@@ -56,6 +59,14 @@ namespace BlondsCooking.Controllers
                     });
                     context.SaveChanges();
                 } 
+            }
+            if (helper.CanRecalculateUserParameters(User.Identity.GetUserId()))
+            {
+                RecommendationHelper recommendationHelper = new RecommendationHelper();
+                var ratesAndParameters =
+                    recommendationHelper.GetRatesAndParametersOfDishesRatedByUser(User.Identity.GetUserId());
+                UserParametersHelper userParametersHelper = new UserParametersHelper();
+                userParametersHelper.CalculateParametersForUser(ratesAndParameters.Item2, ratesAndParameters.Item1);
             }
         }
     }

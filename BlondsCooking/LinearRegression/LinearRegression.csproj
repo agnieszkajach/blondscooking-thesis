@@ -57,6 +57,7 @@
     <Compile Include="FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DishParametersHelper.cs" />
+    <Compile Include="UserParametersHelpercs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
