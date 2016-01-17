@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using BlondsCooking.Helpers;
 using BlondsCooking.Models.Structure;
+using BlondsCooking.Statistics;
 using LinearRegression;
 
 namespace BlondsCooking.Migrations
@@ -22,7 +24,14 @@ namespace BlondsCooking.Migrations
             AddOrUpdateCategories(context);
             context.SaveChanges();
             AddOrUpdateRecipes(context);
+            context.SaveChanges();     
+            AddOrUpdateIngredients(context);
             context.SaveChanges();
+
+            //IngredientsPairingHelper helper = new IngredientsPairingHelper();
+            //var test = helper.CalculatePercentagePairingForIngredient(new List<string>() { "kurczak", "oregano"});
+
+            //var items = from pair in test orderby pair.Value descending select pair;
         }
 
         #region Categories
@@ -647,6 +656,23 @@ namespace BlondsCooking.Migrations
             //    Image = "~/Images/Recipes/Muffins/21.png"
             //});
         }
+        #endregion
+
+        #region Ingredients
+
+        private void AddOrUpdateIngredients(BlondsCookingContext context)
+        {
+            IngredientsHelper helper = new IngredientsHelper();
+            var ingredients = helper.GetUniqueIngredients(context);
+            foreach (var ingredient in ingredients)
+            {
+                context.Ingredients.AddOrUpdate(ing => ing.Name, new Ingredient()
+                {
+                    Name = ingredient
+                });
+            }
+        }
+
         #endregion
     }
 }

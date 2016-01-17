@@ -192,6 +192,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\IngredientsHelper.cs" />
     <Compile Include="Helpers\RecommendationHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -201,11 +202,13 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RecipeRateViewModel.cs" />
     <Compile Include="Models\Structure\Category.cs" />
+    <Compile Include="Models\Structure\Ingredient.cs" />
     <Compile Include="Models\Structure\Recipe.cs" />
     <Compile Include="Models\Structure\User.cs" />
     <Compile Include="Models\Structure\UserRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Statistics\IngredientsPairingHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
