@@ -64,6 +64,11 @@ namespace BlondsCooking.Controllers
             return View("NotEnoughRates");
         }
 
+        public ActionResult FoodPairing()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (context != null)

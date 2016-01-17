@@ -214,6 +214,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jumbotron.css" />
+    <Content Include="Content\simple-sidebar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -341,6 +342,7 @@
     <Content Include="Views\Shared\Info.cshtml" />
     <Content Include="Views\Home\Recommendation.cshtml" />
     <Content Include="Views\Shared\NotEnoughRates.cshtml" />
+    <Content Include="Views\Home\FoodPairing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
