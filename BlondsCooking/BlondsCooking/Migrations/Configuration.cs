@@ -77,7 +77,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[0][3],
                 MeatValue = dishParameters[0][4],
                 SourValue = dishParameters[0][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "kurczak,oregano,ostra papryka,szynka parmeńska,pomidor,mozzarella,bazylia"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -90,7 +91,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[1][3],
                 MeatValue = dishParameters[1][4],
                 SourValue = dishParameters[1][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "kurczak,parmezan,pomidor,czerwona cebula,mozzarella,bazylia,tymianek,estragon,cukinia"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -103,7 +105,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[2][3],
                 MeatValue = dishParameters[2][4],
                 SourValue = dishParameters[2][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "łosoś,szpinak,jarmuż,kasza jaglana,bazylia,szczypiorek,chili"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -116,7 +119,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[3][3],
                 MeatValue = dishParameters[3][4],
                 SourValue = dishParameters[3][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "kurczak,rozmaryn,słodka papryka,oliwa,śliwki,ostra papryka,miód,ocet balsamiczny"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -129,7 +133,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[4][3],
                 MeatValue = dishParameters[4][4],
                 SourValue = dishParameters[4][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "łosoś,śliwki,mango,mięta,chili,cynamon,komosa ryżowa,ocet balsamiczny,oliwa,cukier trzcinowy,syrop klonowy,czosnek"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -142,7 +147,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[5][3],
                 MeatValue = dishParameters[5][4],
                 SourValue = dishParameters[5][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "cebula cukrowa,czosnek,mielone mięso,kurkuma,kmin rzymski,cynamon,ostra papryka,słodka papryka,ryż,czerwona soczewica,dynia,pomidor,chili"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -155,7 +161,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[6][3],
                 MeatValue = dishParameters[6][4],
                 SourValue = dishParameters[6][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "oliwa,cebula,czosnek,ryż,kurki,czerwona papryka,cukinia,białe wino,różowe wino,pomidor malinowy,gorgonzola,parmezan,tymianek,estragon,ostra papryka,kurkuma,kmin rzymski"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -168,7 +175,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[7][3],
                 MeatValue = dishParameters[7][4],
                 SourValue = dishParameters[7][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "kurczak,kolendra,słodka papryka,czosnek,oregano,tymianek,ostra papryka,ryż,czerwona cebula,koncentrat pomidorowy,kmin rzymski,czerwona fasola,awokado,pomidor,chili,kolendra"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -181,7 +189,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[8][3],
                 MeatValue = dishParameters[8][4],
                 SourValue = dishParameters[8][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "cebula cukrowa,czosnek,chili,ocet jabłkowy,kmin rzymski,cynamon,oregano,oliwa,papryka,wołowina,passata pomidorowa,sos sojowy,ryż,czerwona fasola,kukurydza,cheddar,mozzarella"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -194,7 +203,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[9][3],
                 MeatValue = dishParameters[9][4],
                 SourValue = dishParameters[9][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "bakłażan,indyk,cynamon,cebula,czosnek,chili,pietruszka,parmezan,oliwa,pomidor,białe wino,ogórek gruntowy,kmin rzymski,kolendra,mięta,jogurt naturalny,jogurt grecki,majonez"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -207,7 +217,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[10][3],
                 MeatValue = dishParameters[10][4],
                 SourValue = dishParameters[10][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "oliwa,cebula,czosnek,por,indyk,słodka papryka,ostra papryka,kolendra,kopr włoski,marchewka,pietruszka,ryż,czerwona soczewica,pomidor"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -220,7 +231,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[11][3],
                 MeatValue = dishParameters[11][4],
                 SourValue = dishParameters[11][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "dorsz,curry,ziemniaki,pieczarki,oregano,oliwa"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -233,7 +245,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[12][3],
                 MeatValue = dishParameters[12][4],
                 SourValue = dishParameters[12][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "łosoś,ciasto francuskie,czosnek,oliwa,sos sojowy,suszone pomidory,migdały,bazylia"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -246,7 +259,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[13][3],
                 MeatValue = dishParameters[13][4],
                 SourValue = dishParameters[13][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "łosoś,makaron gryczany,makaron ryżowy,biały sezam,czarny sezam,sos sojowy,miód,imbir,biała rzodkiewka,chili,ocet ryżowy,cukier trzcinowy"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -259,7 +273,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[14][3],
                 MeatValue = dishParameters[14][4],
                 SourValue = dishParameters[14][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "łosoś,ryż,szpinak,jajko,oregano,tymianek,natka pietruszki,gałka muszkatołowa,oliwa,jogurt grecki,szczypiorek,czosnek"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -272,7 +287,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[15][3],
                 MeatValue = dishParameters[15][4],
                 SourValue = dishParameters[15][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "kurczak,czerwona papryka,jogurt grecki,oliwa,miód,mozzarella,pomidorki koktajlowe,oregano"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -285,7 +301,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[16][3],
                 MeatValue = dishParameters[16][4],
                 SourValue = dishParameters[16][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "bakłażań,oliwa,kasza gryczana,cebula,czosnek,mielone mięso,pomidor,koncentrat pomidorowy,cukier,oregano,tymianek,chili,natka pietruszki,cynamon"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -298,7 +315,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[17][3],
                 MeatValue = dishParameters[17][4],
                 SourValue = dishParameters[17][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "bakłażan,oliwa,cebula,czosnek,mielone mięso,białe wino,pomidor,natka pietruszki,cynamon,chili,oregano"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -311,7 +329,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[18][3],
                 MeatValue = dishParameters[18][4],
                 SourValue = dishParameters[18][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "ziemniaki,łosoś,cukinia,śmietanka,camembert,jajko,parmezan,oregano"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -324,7 +343,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[19][3],
                 MeatValue = dishParameters[19][4],
                 SourValue = dishParameters[19][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "ryż,czerwona papryka,oliwa,kurczak,cebula,czosnek,jajko,oregano,tymianek,natka pietruszki,pomidor,białe wino"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -337,7 +357,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[20][3],
                 MeatValue = dishParameters[20][4],
                 SourValue = dishParameters[20][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "łosoś,mleko,ziemniaki,por,brokuł,kapary,krewetki,oliwa"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -350,7 +371,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[21][3],
                 MeatValue = dishParameters[21][4],
                 SourValue = dishParameters[21][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "borowiki,makaron,kurczak,słodka papryka,oliwa,dynia,cebula,śmietanka,tymianek"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -363,7 +385,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[22][3],
                 MeatValue = dishParameters[22][4],
                 SourValue = dishParameters[22][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "kurczak,orzechy włoskie,parmezan,natka pietruszki,jajko"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -376,7 +399,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[23][3],
                 MeatValue = dishParameters[23][4],
                 SourValue = dishParameters[23][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "oliwa,szczypiorek,cebula,pomidor,brązowy cukier,sos sojowy,tymianek,dorsz,pomidorki koktajlowe"
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
@@ -389,7 +413,8 @@ namespace BlondsCooking.Migrations
                 SweetValue = dishParameters[24][3],
                 MeatValue = dishParameters[24][4],
                 SourValue = dishParameters[24][5],
-                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault()
+                CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
+                IngredientsVector = "oliwa,cebula,czosnek,chili,kmin rzymski,oregano,wołowina,pomidor,czerwona papryka,czerwona fasola,suszone pomidory,boczek"
             });
             //context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
             //{

@@ -41,5 +41,7 @@ namespace BlondsCooking.Models.Structure
         public double MeatValue { get; set; }
 
         public double SourValue { get; set; }
+
+        public string IngredientsVector { get; set; }
     }
 }
