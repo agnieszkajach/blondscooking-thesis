@@ -1,4 +1,4 @@
-﻿var BlondsCookingApp = angular.module('BlondsCookingApp', [])
+﻿var BlondsCookingApp = angular.module('BlondsCookingApp', []);
 
 
 BlondsCookingApp.factory('IngredientService', [
@@ -12,6 +12,7 @@ BlondsCookingApp.factory('IngredientService', [
 ]);
 
 BlondsCookingApp.controller('IngredientController', function ($scope, IngredientService) {
+    $scope.pairings = [];
     getIngredients();
     function getIngredients() {
         IngredientService.getIngredients().success(function (ingr) {
@@ -19,8 +20,13 @@ BlondsCookingApp.controller('IngredientController', function ($scope, Ingredient
             console.log($scope.ingredients);
         })
             .error(function (error) {
-                $scope.status = 'Unab;e to load customer data: ' + error.message;
+                $scope.status = 'Unable to load customer data: ' + error.message;
                 console.log($scope.status);
             });
+    }
+
+    $scope.addIngredient = function (id) {
+        $scope.pairings.push($scope.ingredients[id]);
+        $scope.$apply();
     }
 });

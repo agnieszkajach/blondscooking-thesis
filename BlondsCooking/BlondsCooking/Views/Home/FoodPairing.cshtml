@@ -1,34 +1,41 @@
-﻿<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <div ng-app="BlondsCookingApp" class="row">
-                    <div ng-controller="IngredientController">
-                        <table class="table">
-                            <tr ng-repeat="i in ingredients">
-                                <td>{{i.Name}}</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </li>
-        </ul>
-       
-    </div>
-</div>
+﻿<div ng-app="BlondsCookingApp">
+    <div ng-controller="IngredientController">
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <div class="row">
+                            <div class="col-md-3" ng-repeat="i in ingredients">
+                                {{i.Name}}
+                                <input type="button" class="btn btn-default" value="Add" ng-click="addIngredient(i.Id)" />
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 
-
-<div id="page-content-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Discover food pairings</h1>
-                <a href="#menu-toggle" class="btn btn-success" id="menu-toggle">Add</a>
             </div>
         </div>
-       
+
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Discover food pairings</h1>
+                        <a href="#menu-toggle" class="btn btn-success" id="menu-toggle">Add</a>
+                        <div class="col-md-1" ng-repeat="p in pairings">
+                            {{p.Name}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
+
+
+
 
 @section scripts
 {
