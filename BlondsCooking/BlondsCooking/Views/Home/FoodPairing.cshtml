@@ -2,11 +2,18 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">
-                    Whatever
-                </a>
+                <div ng-app="BlondsCookingApp" class="row">
+                    <div ng-controller="IngredientController">
+                        <table class="table">
+                            <tr ng-repeat="i in ingredients">
+                                <td>{{i.Name}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </li>
         </ul>
+       
     </div>
 </div>
 
@@ -19,7 +26,13 @@
                 <a href="#menu-toggle" class="btn btn-success" id="menu-toggle">Add</a>
             </div>
         </div>
+       
     </div>
 </div>
+
+@section scripts
+{
+    <script src="~/Modules/IngredientClient.js"></script>
+}
 
 

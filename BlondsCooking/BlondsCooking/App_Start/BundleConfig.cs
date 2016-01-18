@@ -30,6 +30,8 @@ namespace BlondsCooking
                        "~/Content/simple-sidebar.css",
                       "~/Content/site.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js"));
+
         }
     }
 }

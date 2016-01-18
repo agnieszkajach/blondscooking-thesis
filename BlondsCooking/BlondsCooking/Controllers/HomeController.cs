@@ -69,6 +69,15 @@ namespace BlondsCooking.Controllers
             return View();
         }
 
+        public JsonResult GetIngredients()
+        {
+            using (BlondsCookingContext context = new BlondsCookingContext())
+            {
+                var result = context.Ingredients.ToList();
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (context != null)
