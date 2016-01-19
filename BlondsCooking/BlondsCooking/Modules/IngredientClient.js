@@ -27,6 +27,8 @@ BlondsCookingApp.controller('IngredientController', function ($scope, Ingredient
 
     $scope.addIngredient = function (id) {
         $scope.pairings.push($scope.ingredients[id]);
+        alert($scope.pairings);
+        $scope.show = !$scope.show;
         $scope.$apply();
     }
 });
