@@ -54,7 +54,7 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
                 listOfIngredients: $scope.pairings
             }
         };
-        $http.get("/Home/GetMatchingIngredients", config)
+        $http.post("/Home/GetMatchingIngredients", config)
                 .success(function (data) {
                     alert("good");
                 })

@@ -79,12 +79,13 @@ namespace BlondsCooking.Controllers
             }
         }
 
-        public JsonResult GetMatchingIngredients(IEnumerable<Ingredient> listOfIngredients)
+        [HttpPost]
+        public JsonResult GetMatchingIngredients(List<Ingredient> listOfIngredients)
         {
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
                 var result = context.Ingredients.ToList();
-                return Json(result, JsonRequestBehavior.AllowGet);
+                return Json(result);
             }
         }
 
