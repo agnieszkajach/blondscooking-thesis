@@ -80,13 +80,19 @@ namespace BlondsCooking.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetMatchingIngredients(List<Ingredient> listOfIngredients)
+        public JsonResult GetMatchingIngredients(List<IngredientRequestModel> listOfInts)
         {
-            using (BlondsCookingContext context = new BlondsCookingContext())
-            {
-                var result = context.Ingredients.ToList();
-                return Json(result);
-            }
+            return Json(listOfInts, JsonRequestBehavior.AllowGet);
+            //using (BlondsCookingContext context = new BlondsCookingContext())
+            //{
+            //    var result = context.Ingredients.ToList();
+            //    return Json(result);
+            //}
+        }
+
+        public class IngredientRequestModel
+        {
+            public int Id { get; set; }
         }
 
         protected override void Dispose(bool disposing)
