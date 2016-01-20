@@ -79,7 +79,7 @@ namespace BlondsCooking.Controllers
             }
         }
 
-        public JsonResult GetMatchingIngredients(int listOfIngredients)
+        public JsonResult GetMatchingIngredients(IEnumerable<Ingredient> listOfIngredients)
         {
             using (BlondsCookingContext context = new BlondsCookingContext())
             {

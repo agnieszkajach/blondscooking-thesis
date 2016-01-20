@@ -27,8 +27,6 @@ BlondsCookingApp.factory('IngredientService', [
 
 
 BlondsCookingApp.controller('IngredientController', function ($http, $scope, IngredientService) {
-
-
     $scope.pairings = [];
     getIngredients();
 
@@ -53,10 +51,10 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
     $scope.showIngredients = function () {
         var config = {
             params: {
-                selectedIngredients: $scope.pairings
+                listOfIngredients: $scope.pairings
             }
         };
-        $http.post("/Home/GetMatchingIngredients", config)
+        $http.get("/Home/GetMatchingIngredients", config)
                 .success(function (data) {
                     alert("good");
                 })
@@ -65,10 +63,5 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
             });
         $scope.show = !$scope.show;
         $scope.$apply();
-        var config = {
-            params: {
-                id: 1
-            }
-        };
     }
 });
