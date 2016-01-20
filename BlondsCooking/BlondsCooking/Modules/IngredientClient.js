@@ -5,15 +5,33 @@ BlondsCookingApp.factory('IngredientService', [
     '$http', function ($http) {
         var IngredientService = {};
         IngredientService.getIngredients = function () {
-            return $http.get('/Home/GetIngredients');
+            return $http.get('/Home/GetIngredients', 1);
         };
         return IngredientService;
     }
 ]);
 
-BlondsCookingApp.controller('IngredientController', function ($scope, IngredientService) {
+//BlondsCookingApp.factory('IngredientPairingService', [
+//    '$http', function ($http) {
+//        var IngredientPairingService = {};
+//        IngredientPairingService.getIngredients = function () {
+//            return $http({
+//                url: "/Home/GetIngredientsAsd",
+//                method: "GET",
+//                params: { id: 1 }
+//            });
+//        };
+//        return IngredientPairingService;
+//    }
+//]);
+
+
+BlondsCookingApp.controller('IngredientController', function ($http, $scope, IngredientService) {
+
+
     $scope.pairings = [];
     getIngredients();
+
     function getIngredients() {
         IngredientService.getIngredients().success(function (ingr) {
             $scope.ingredients = ingr;
@@ -25,10 +43,32 @@ BlondsCookingApp.controller('IngredientController', function ($scope, Ingredient
             });
     }
 
+
     $scope.addIngredient = function (id) {
         $scope.pairings.push($scope.ingredients[id]);
-        alert($scope.pairings);
         $scope.show = !$scope.show;
         $scope.$apply();
+    }
+
+    $scope.showIngredients = function () {
+        var config = {
+            params: {
+                selectedIngredients: $scope.pairings
+            }
+        };
+        $http.post("/Home/GetMatchingIngredients", config)
+                .success(function (data) {
+                    alert("good");
+                })
+            .error(function (error) {
+                alert("dupablada");
+            });
+        $scope.show = !$scope.show;
+        $scope.$apply();
+        var config = {
+            params: {
+                id: 1
+            }
+        };
     }
 });

@@ -69,7 +69,17 @@ namespace BlondsCooking.Controllers
             return View();
         }
 
-        public JsonResult GetIngredients()
+   
+        public JsonResult GetIngredients(int id = 0)
+        {
+            using (BlondsCookingContext context = new BlondsCookingContext())
+            {
+                var result = context.Ingredients.ToList();
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public JsonResult GetMatchingIngredients(int listOfIngredients)
         {
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
