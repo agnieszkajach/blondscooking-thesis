@@ -7,5 +7,6 @@ namespace BlondsCooking.Models.Requests
 {
     public class IngredientRequestModel
     {
+        public int Id { get; set; }
     }
 }

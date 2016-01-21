@@ -4,7 +4,7 @@
             <div class="col-md-3" ng-repeat="i in ingredients">
                 {{i.Name}}
                 <input id="add-ingredient2" href="#menu-toggle" type="button" class="btn btn-default" value="Dodaj" ng-click="addIngredient(i.Id)" />
-                <div ng-if="pairings.length > 0">Dopasowanie</div>
+                <div ng-if="pairings.length > 0">{{i.MatchValue}}</div>
             </div>
         </div>
 

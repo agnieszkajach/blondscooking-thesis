@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BlondsCooking.Helpers;
+using BlondsCooking.Models;
 using BlondsCooking.Models.Db;
 using BlondsCooking.Models.Requests;
 using BlondsCooking.Models.Structure;
+using BlondsCooking.Statistics;
 using Microsoft.AspNet.Identity;
 
 namespace BlondsCooking.Controllers
@@ -81,14 +83,37 @@ namespace BlondsCooking.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetMatchingIngredients(List<IngredientRequestModel> listOfInts)
+        public JsonResult GetMatchingIngredients(List<int> listOfIds)
         {
-            //return Json(listOfInts, JsonRequestBehavior.AllowGet);
-            using (BlondsCookingContext context = new BlondsCookingContext())
+            if (listOfIds == null || listOfIds.Count == 0)
             {
-                var result = context.Ingredients.ToList();
-                return Json(result);
+                using (BlondsCookingContext context = new BlondsCookingContext())
+                {
+                    var result = context.Ingredients.ToList();
+                    return Json(result);
+                }
             }
+            else
+            {
+                using (BlondsCookingContext context = new BlondsCookingContext())
+                {
+                    List<string> ingredientsList =
+                        context.Ingredients.Where(ingrdient => listOfIds.Contains(ingrdient.Id))
+                            .Select(ingredient => ingredient.Name)
+                            .ToList();
+
+                    IngredientsPairingHelper pairingHelper = new IngredientsPairingHelper();
+                    var pairedIngredients = pairingHelper.CalculatePercentagePairingForIngredient(ingredientsList);
+                    var pairedIngredientsSorted = from pair in pairedIngredients orderby pair.Value descending select pair;
+                    List<IngredientMatchViewModel> result = new List<IngredientMatchViewModel>();
+                    foreach (var pairedIngredient in pairedIngredientsSorted)
+                    {
+                        result.Add(new IngredientMatchViewModel(pairedIngredient.Key, pairedIngredient.Value));
+                    }
+                    return Json(result);
+                }
+            }
+            
         }
 
 

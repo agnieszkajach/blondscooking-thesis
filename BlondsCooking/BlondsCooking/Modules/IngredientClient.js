@@ -44,8 +44,8 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
 
 
     $scope.addIngredient = function (id) {
-        $scope.pairings.push($scope.ingredients[id-1]);
-        $scope.pairingsRequest.push({ Id: id });
+        $scope.pairings.push($scope.ingredients[id - 1]);
+        $scope.pairingsRequest.push(id);
         $scope.show = !$scope.show;
         $scope.$apply();
     }
@@ -60,7 +60,8 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
             data: $scope.pairingsRequest
         }
         $http(req)
-                .success(function (data) {
+                .success(function (pairedIngredients) {
+                    $scope.ingredients = pairedIngredients;
                 })
             .error(function (error) {
             });

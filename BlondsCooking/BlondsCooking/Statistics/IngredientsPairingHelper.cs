@@ -21,13 +21,22 @@ namespace BlondsCooking.Statistics
                         .ToList();
                 foreach (var ingredient in ingredientsExceptSelected)
                 {
+                    double percentagePairingValue;
                     var recipesWithAllIngredients =
                         recipesWithSelectedIngredients.Where(
                             recipe => recipe.IngredientsVector.Contains(ingredient.Name)).ToList();
-                    double percentagePairingValue = (double)recipesWithAllIngredients.Count/recipesWithSelectedIngredients.Count;
+                    if (recipesWithAllIngredients.Count == 0 || recipesWithSelectedIngredients.Count == 0)
+                    {
+                        percentagePairingValue = 0;
+                    }
+                    else
+                    {
+                        percentagePairingValue = (double)recipesWithAllIngredients.Count / recipesWithSelectedIngredients.Count;
+                    }                    
                     percentagePairing.Add(ingredient.Name, percentagePairingValue);
                 }
             }
+            
             return percentagePairing;
         }
     }
