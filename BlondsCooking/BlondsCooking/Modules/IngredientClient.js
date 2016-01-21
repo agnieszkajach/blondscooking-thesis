@@ -26,7 +26,7 @@ BlondsCookingApp.factory('IngredientService', [
 //]);
 
 
-BlondsCookingApp.controller('IngredientController', function ($http, $scope, IngredientService) {
+BlondsCookingApp.controller('IngredientController', function ($http, $scope, $filter, IngredientService) {
     $scope.pairings = [];
     $scope.pairingsRequest = [];
     getIngredients();
@@ -44,7 +44,9 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
 
 
     $scope.addIngredient = function (id) {
-        $scope.pairings.push($scope.ingredients[id - 1]);
+        var selectedIngredient = $filter('filter')($scope.ingredients, { Id: id})[0];
+        $scope.pairings.push(selectedIngredient);
+        //$scope.pairings.push($scope.ingredients[id - 1]);
         $scope.pairingsRequest.push(id);
         $scope.show = !$scope.show;
         $scope.$apply();
