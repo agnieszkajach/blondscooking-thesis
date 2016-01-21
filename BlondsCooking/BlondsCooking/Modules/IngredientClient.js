@@ -61,10 +61,8 @@ BlondsCookingApp.controller('IngredientController', function ($http, $scope, Ing
         }
         $http(req)
                 .success(function (data) {
-                    alert("good");
                 })
             .error(function (error) {
-                alert("dupablada");
             });
         $scope.show = !$scope.show;
         $scope.$apply();

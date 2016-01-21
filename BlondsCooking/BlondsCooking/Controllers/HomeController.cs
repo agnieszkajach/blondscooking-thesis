@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BlondsCooking.Helpers;
 using BlondsCooking.Models.Db;
+using BlondsCooking.Models.Requests;
 using BlondsCooking.Models.Structure;
 using Microsoft.AspNet.Identity;
 
@@ -82,18 +83,14 @@ namespace BlondsCooking.Controllers
         [HttpPost]
         public JsonResult GetMatchingIngredients(List<IngredientRequestModel> listOfInts)
         {
-            return Json(listOfInts, JsonRequestBehavior.AllowGet);
-            //using (BlondsCookingContext context = new BlondsCookingContext())
-            //{
-            //    var result = context.Ingredients.ToList();
-            //    return Json(result);
-            //}
+            //return Json(listOfInts, JsonRequestBehavior.AllowGet);
+            using (BlondsCookingContext context = new BlondsCookingContext())
+            {
+                var result = context.Ingredients.ToList();
+                return Json(result);
+            }
         }
 
-        public class IngredientRequestModel
-        {
-            public int Id { get; set; }
-        }
 
         protected override void Dispose(bool disposing)
         {
