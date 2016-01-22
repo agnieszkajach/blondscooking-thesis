@@ -27,6 +27,9 @@ BlondsCookingApp.factory('IngredientService', [
 
 
 BlondsCookingApp.controller('IngredientController', function ($http, $scope, $filter, IngredientService) {
+
+   
+
     $scope.pairings = [];
     $scope.pairingsRequest = [];
     getIngredients();

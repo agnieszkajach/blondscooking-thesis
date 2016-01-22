@@ -32,6 +32,8 @@ namespace BlondsCooking
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/circles").Include("~/Scripts/circles.js"));
+
         }
     }
 }

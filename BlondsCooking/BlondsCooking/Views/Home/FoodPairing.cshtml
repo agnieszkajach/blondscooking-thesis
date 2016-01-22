@@ -2,7 +2,7 @@
     <div ng-controller="IngredientController">        
         <div class="row" ng-show="show">
             <div class="col-md-3" ng-repeat="i in ingredients">
-                {{i.Name}} {{i.Id}}
+                {{i.Name}}
                 <input id="add-ingredient2" href="#menu-toggle" type="button" class="btn btn-default" value="Dodaj" ng-click="addIngredient(i.Id)" />
                 <div ng-if="pairings.length > 0">{{i.MatchingIconUrl}}</div>
             </div>
@@ -19,6 +19,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="circle" id="circles-1"></div>
 
             </div>
         </div>
