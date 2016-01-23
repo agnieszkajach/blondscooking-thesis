@@ -11,8 +11,8 @@ namespace BlondsCooking.LinearRegression
 {
     public class DishParametersHelper
     {
-        public string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\meal_0.csv";
-        public string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\LinearRegression\\bin\\Debug\\log.txt";
+        public string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
+        public string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\log.txt";
         public List<double[]> CalculateParameterForDishes()
         {
             double global = 0.0;

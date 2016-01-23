@@ -11,13 +11,13 @@ namespace BlondsCooking.Helpers
 {
     public class RecommendationHelper
     {
-        public readonly int MinimumNumberOfRates = 10;
+        public readonly int MinimumNumberOfRates = 5;
         public bool CanGetRecommendation(string userId)
         {
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
                 var countOfRates = context.UserRatings.Count(rating => rating.UserId.CompareTo(userId) == 0);
-                if (countOfRates > MinimumNumberOfRates)
+                if (countOfRates >= MinimumNumberOfRates)
                 {
                     return true;
                 }
@@ -31,7 +31,7 @@ namespace BlondsCooking.Helpers
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
                 var countOfRates = context.UserRatings.Count(rating => rating.UserId.CompareTo(userId) == 0);
-                if (countOfRates > MinimumNumberOfRates)
+                if (countOfRates >= MinimumNumberOfRates)
                 {
                     return true;
                 }
