@@ -62,7 +62,8 @@ namespace BlondsCooking.Controllers
             RecommendationHelper helper = new RecommendationHelper();
             if (helper.CanGetRecommendation(User.Identity.GetUserId()))
             {
-                return View();
+                IEnumerable<Recipe> model = helper.GetRecommendedRecipesForUser(User.Identity.GetUserId());
+                return View(model);
             }
             return View("NotEnoughRates");
         }
