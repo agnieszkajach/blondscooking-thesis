@@ -216,7 +216,9 @@
     <Compile Include="Models\Db\IBlondsCookingContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IngredientMatchViewModel.cs" />
+    <Compile Include="Models\LinearRegressionModel\Dish.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\LinearRegressionModel\Rating.cs" />
     <Compile Include="Models\RecipeRateViewModel.cs" />
     <Compile Include="Models\Requests\IngredientRequestModel.cs" />
     <Compile Include="Models\Structure\Category.cs" />
