@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Accord.Statistics.Models.Regression.Linear;
+using BlondsCooking.Models.LinearRegressionModel;
 
 namespace BlondsCooking.LinearRegression
 {
     public class UserParametersHelper
     {
-        public double[] CalculateParametersForUser(List<double[]> dishesParameters, List<double> rates)
+        public double[] CalculateParametersForUser(List<Rating> ratesAndParametersOfDishesRatedByUser)
         {
-            double[][] inputs = new double[dishesParameters.Count][];
-            double[][] outputs = new double[rates.Count][];
-            for (int i = 0; i < dishesParameters.Count; i++)
+            double[][] inputs = new double[ratesAndParametersOfDishesRatedByUser.Count][];
+            double[][] outputs = new double[ratesAndParametersOfDishesRatedByUser.Count][];
+            for (int i = 0; i < ratesAndParametersOfDishesRatedByUser.Count; i++)
             {
-                inputs[i] = dishesParameters[i];
+                inputs[i] = ratesAndParametersOfDishesRatedByUser[i].DishParameters;
             }
-            for (int i = 0; i < rates.Count; i++)
+            for (int i = 0; i < ratesAndParametersOfDishesRatedByUser.Count; i++)
             {
-                outputs[i] = new double[] {rates[i]};
+                outputs[i] = new double[] { ratesAndParametersOfDishesRatedByUser[i].Rate};
             }
 
             MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);

@@ -63,10 +63,10 @@ namespace BlondsCooking.Controllers
             if (helper.CanRecalculateUserParameters(User.Identity.GetUserId()))
             {
                 RecommendationHelper recommendationHelper = new RecommendationHelper();
-                var ratesAndParameters =
+                var ratesAndParametersOfDishesRatedByUser =
                     recommendationHelper.GetRatesAndParametersOfDishesRatedByUser(User.Identity.GetUserId());
                 UserParametersHelper userParametersHelper = new UserParametersHelper();
-                userParametersHelper.CalculateParametersForUser(ratesAndParameters.Item2, ratesAndParameters.Item1);
+                userParametersHelper.CalculateParametersForUser(ratesAndParametersOfDishesRatedByUser);
             }
         }
     }

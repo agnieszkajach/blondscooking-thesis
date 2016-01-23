@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BlondsCooking.Models.Db;
+using BlondsCooking.Models.LinearRegressionModel;
 
 namespace BlondsCooking.Helpers
 {
@@ -36,16 +37,16 @@ namespace BlondsCooking.Helpers
             return false;
         }
 
-        public Tuple<List<double>, List<double[]>> GetRatesAndParametersOfDishesRatedByUser(string userId)
+        public List<Rating> GetRatesAndParametersOfDishesRatedByUser(string userId)
         {
-            List<double[]> parameters = new List<double[]>();
-            List<double> rates = new List<double>();
+            List<Rating> ratesAndParametersOfDishesRatedByUser = new List<Rating>();
             using (BlondsCookingContext context = new BlondsCookingContext())
             {
                 List<int> dishesId = context.UserRatings.Where(rating => rating.UserId.CompareTo(userId) == 0).Select(rating => rating.RecipeId).ToList();
                 foreach (var dishId in dishesId)
                 {
-                    parameters.Add(new double[]
+                    Rating newRating = new Rating();
+                    newRating.DishParameters = new double[]
                     {
                         context.Recipes.Where(dish => dish.Id == dishId).Select(dish => dish.SpicyValue).FirstOrDefault(),
                         context.Recipes.Where(dish => dish.Id == dishId).Select(dish => dish.SaltyValue).FirstOrDefault(),
@@ -53,15 +54,17 @@ namespace BlondsCooking.Helpers
                         context.Recipes.Where(dish => dish.Id == dishId).Select(dish => dish.SweetValue).FirstOrDefault(),
                         context.Recipes.Where(dish => dish.Id == dishId).Select(dish => dish.MeatValue).FirstOrDefault(),
                         context.Recipes.Where(dish => dish.Id == dishId).Select(dish => dish.SourValue).FirstOrDefault()
-                    });
-                    rates.Add(context.UserRatings.Where(
-                            rating => rating.RecipeId == dishId && rating.UserId.CompareTo(userId) == 0)
-                            .Select(rating => rating.Rate)
-                            .FirstOrDefault());
-                        
+                    };
+                    newRating.DishId = dishId;
+                    newRating.Rate = context.UserRatings.Where(
+                        rating => rating.RecipeId == dishId && rating.UserId.CompareTo(userId) == 0)
+                        .Select(rating => rating.Rate)
+                        .FirstOrDefault();
+                    newRating.UserId = userId;
+                    ratesAndParametersOfDishesRatedByUser.Add(newRating);
                 }
             }
-            return new Tuple<List<double>, List<double[]>>(rates, parameters);
+            return ratesAndParametersOfDishesRatedByUser;
         }
 
         public void UpdateUsersParameters(double[] parameters)
