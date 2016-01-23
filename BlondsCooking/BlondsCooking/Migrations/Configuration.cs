@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using BlondsCooking.Helpers;
+using BlondsCooking.LinearRegression;
 using BlondsCooking.Models.Structure;
 using BlondsCooking.Statistics;
-using LinearRegression;
 
 namespace BlondsCooking.Migrations
 {

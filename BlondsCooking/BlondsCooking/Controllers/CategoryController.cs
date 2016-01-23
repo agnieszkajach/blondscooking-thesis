@@ -5,10 +5,10 @@ using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
 using BlondsCooking.Helpers;
+using BlondsCooking.LinearRegression;
 using BlondsCooking.Models;
 using BlondsCooking.Models.Db;
 using BlondsCooking.Models.Structure;
-using LinearRegression;
 using Microsoft.AspNet.Identity;
 
 namespace BlondsCooking.Controllers

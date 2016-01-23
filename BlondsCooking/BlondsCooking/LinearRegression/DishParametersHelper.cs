@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Accord.Statistics.Models.Regression.Linear;
+using BlondsCooking.Helpers;
 
-namespace LinearRegression
+namespace BlondsCooking.LinearRegression
 {
     public class DishParametersHelper
     {

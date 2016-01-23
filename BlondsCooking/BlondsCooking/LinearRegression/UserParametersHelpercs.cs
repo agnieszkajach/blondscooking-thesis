@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Accord.Statistics.Models.Regression.Linear;
 
-namespace LinearRegression
+namespace BlondsCooking.LinearRegression
 {
     public class UserParametersHelper
     {

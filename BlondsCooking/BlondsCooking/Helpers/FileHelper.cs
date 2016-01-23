@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LinearRegression
+namespace BlondsCooking.Helpers
 {
     public class FileHelper
     {
