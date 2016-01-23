@@ -1,0 +1,15 @@
+﻿.selected-ingredients-corner {
+    border-radius: 15px 50px 30px;
+    border: 2px solid #FFFFFF;
+    padding: 20px;
+    height: 15vh;
+    width: 15vw;
+    margin: 1vw;
+}
+
+.all-ingredient-corner {
+    border: 1px solid #696969;
+    height: 15vh;
+    width: 15vw;
+    margin: 1vw;
+}

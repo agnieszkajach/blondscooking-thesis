@@ -27,7 +27,7 @@ namespace BlondsCooking
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                        "~/Content/jumbotron.css",
-                       "~/Content/simple-sidebar.css",
+                       "~/Content/foodpairing.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js"));
