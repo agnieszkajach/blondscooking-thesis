@@ -306,6 +306,7 @@
     <Content Include="Images\Recipes\Shakes\10.png" />
     <Content Include="Images\Recipes\Shakes\14.png" />
     <Content Include="Modules\IngredientClient.js" />
+    <Content Include="Modules\RecipeClient.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />

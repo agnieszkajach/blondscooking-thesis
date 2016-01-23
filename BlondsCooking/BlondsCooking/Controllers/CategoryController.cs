@@ -44,7 +44,8 @@ namespace BlondsCooking.Controllers
             return View(model);
         }
 
-        public void Rate(int id = 0, int rate = 0)
+        [HttpPost]
+        public JsonResult Rate(int id, int rateValue)
         {
             RecommendationHelper helper = new RecommendationHelper();
             if (id != 0)
@@ -54,7 +55,7 @@ namespace BlondsCooking.Controllers
                     context.UserRatings.Add(new UserRating()
                     {
                         RecipeId = id,
-                        Rate = rate,
+                        Rate = rateValue,
                         UserId = User.Identity.GetUserId()
                     });
                     context.SaveChanges();
@@ -68,6 +69,7 @@ namespace BlondsCooking.Controllers
                 UserParametersHelper userParametersHelper = new UserParametersHelper();
                 userParametersHelper.CalculateParametersForUser(ratesAndParametersOfDishesRatedByUser);
             }
+            return Json(id);
         }
     }
 }
