@@ -23,6 +23,6 @@ namespace BlondsCooking.Models.Structure
 
         public Recipe Recipe { get; set; }
 
-        public double Rate { get; set; }
+        public int Rate { get; set; }
     }
 }

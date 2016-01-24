@@ -25,8 +25,13 @@ namespace BlondsCooking.Controllers
 
         public ActionResult Recipe(int id = 1)
         {
+            string userId = User.Identity.GetUserId();
             context = new BlondsCookingContext();
             Recipe recipeModel = context.Recipes.FirstOrDefault(recipe => recipe.Id == id);
+            UserRating rate =
+                context.UserRatings.Where(
+                    rating => rating.RecipeId == id && rating.UserId.CompareTo(userId) == 0)
+                    .FirstOrDefault();
             if (recipeModel == null)
             {
                 return View("Error");
@@ -39,7 +44,8 @@ namespace BlondsCooking.Controllers
                 Image = recipeModel.Image,
                 Ingredients = recipeModel.Ingredients,
                 Temperature = recipeModel.Temperature,
-                Time = recipeModel.Time
+                Time = recipeModel.Time,
+                Rate = (rate == null) ? null : (int?)rate.Rate
             };
             return View(model);
         }

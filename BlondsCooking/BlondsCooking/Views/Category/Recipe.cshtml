@@ -31,17 +31,23 @@
     @if (Request.IsAuthenticated)
     {
         <div ng-controller="RecipeController">
-            <input id="recipeId" type="hidden" value="@Model.Id" />
-            <div class="col-md-offset-2 col-md-10">
-                <p ng-show="validationError">Hey, you forgot about something..</p>
-                <select class="form-control" name="rateSelect" ng-model="rateValue" ng-options="r for r in rates">
-                </select>
+            <input id="recipeId" type="hidden" value="@Model.Id"/>
+            <input id="rateValue" type="hidden" value="@Model.Rate" />
+            <div ng-show="recipeRated">
+                {{rateValue}}
             </div>
-            <div class="form-group">
+            <div ng-hide="recipeRated">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Apply" class="btn btn-default" ng-click="rateRecipe(rateValue)"/>
+                    <p ng-show="validationError">Hey, you forgot about something..</p>
+                    <select class="form-control" name="rateSelect" ng-model="rateValue" ng-options="r for r in rates"></select>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Apply" class="btn btn-default" ng-click="rateRecipe(rateValue)" />
+                    </div>
                 </div>
             </div>
+           
         </div>
     }
 
