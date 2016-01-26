@@ -5,60 +5,46 @@
     var imagePath = @Model.Image;
 }
 
-<h2>Recipe</h2>
 
 <div ng-app="RecipeModule">
-    <h4>Recipe</h4>
-    <hr/>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            <img class="img-recipe" src="@Url.Content(Model.Image)" alt="Image"/>
-        </dd>
-    </dl>
-
-    @if (Request.IsAuthenticated)
-    {
-        <div ng-controller="RecipeController">
-            <input id="recipeId" type="hidden" value="@Model.Id"/>
-            <input id="rateValue" type="hidden" value="@Model.Rate" />
-            <div ng-show="recipeRated">
-                {{rateValue}}
-            </div>
-            <div ng-hide="recipeRated">
-                <div class="col-md-offset-2 col-md-10">
-                    <p ng-show="validationError">Hey, you forgot about something..</p>
-                    <select class="form-control" name="rateSelect" ng-model="rateValue" ng-options="r for r in rates"></select>
+    <div class="col-md-4">
+        <img class="img-recipe" src="@Url.Content(Model.Image)" alt="Image"/>
+        @if (Request.IsAuthenticated)
+        {
+            <div ng-controller="RecipeController">
+                <input id="recipeId" type="hidden" value="@Model.Id" />
+                <input id="rateValue" type="hidden" value="@Model.Rate" />
+                <div ng-show="recipeRated" class="rate-recipe">
+                    Your rate: {{rateValue}}
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Apply" class="btn btn-default" ng-click="rateRecipe(rateValue)" />
+                <div ng-hide="recipeRated">
+                    <div class="col-md-10">
+                        <div class="rate-info-recipe">Jak bardzo Ci smakowało?</div>
+                        <p ng-show="validationError">Hey, you forgot about something..</p>
+                        <span>
+                            <select class="form-control" name="rateSelect" ng-model="rateValue" ng-options="r for r in rates"></select>
+                            <input type="submit" value="Oceń" class="btn btn-default" ng-click="rateRecipe(rateValue)" />    
+                        </span>                       
                     </div>
                 </div>
+
             </div>
-           
-        </div>
-    }
-
-    <div>
-
+        }
     </div>
+    <div class="col-md-8">
+        <div class="title-recipe">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Ingredients)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+
 </div>
 
-<script>
-  app.value('myValue', @Html.Raw(Json.Encode(Model)))
- </script>
 
 @section scripts
 {
