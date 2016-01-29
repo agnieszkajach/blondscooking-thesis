@@ -11,8 +11,7 @@ namespace BlondsCooking.Helpers
     {
         private const int NumberOfTesters = 27;
         private const int NumberOfRecipes = 25;
-        private string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
-        private string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\log.txt";
+
         public Tuple<double[][], double[][]> ReadFromFile(string path)
         {
             Tuple<double[][], double[][]> temp;
@@ -60,10 +59,10 @@ namespace BlondsCooking.Helpers
             return temp;
         }
 
-        public double[][] GetAllUsersPreferences(int dishId)
+        public double[][] GetAllUsersPreferences()
         {
+            string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
             double[][] allUsersPreferences = new double[NumberOfTesters][];
-            PathToFile = PathToFile.Replace(0.ToString(), dishId.ToString());
             using (StreamReader streamReader = new StreamReader(PathToFile))
             {
                 string allLines = streamReader.ReadToEnd();
@@ -93,14 +92,17 @@ namespace BlondsCooking.Helpers
 
         public double[][] GetUserRatesOfAllDishes(int userId)
         {
+            string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
             double[][] oneUserRatesOfAllDishes = new double[NumberOfRecipes][];
-            using (StreamReader streamReader = new StreamReader(PathToFile))
+
+            for (int i = 0; i < NumberOfRecipes; i++)
             {
-                for (int i = 0; i < NumberOfRecipes; i++)
+                using (StreamReader streamReader = new StreamReader(PathToFile))
                 {
                     string allLines = streamReader.ReadToEnd();
                     var eachLine = allLines.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-                    var valuesInLine = eachLine[userId].Split(';');
+                    var properLine = eachLine[userId + 1];
+                    var valuesInLine = properLine.Split(';');
                     double parseDouble;
                     var parseSuccessful = Double.TryParse(valuesInLine[7], out parseDouble);
                     if (parseSuccessful)
@@ -119,6 +121,7 @@ namespace BlondsCooking.Helpers
 
         public double[][] GetAllUsersRatesForOneDish(int dishId)
         {
+            string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_" + dishId + ".csv";
             double[][] allUsersRatesForOneDish = new double[NumberOfTesters][];
             using (StreamReader streamReader = new StreamReader(PathToFile))
             {
@@ -131,11 +134,11 @@ namespace BlondsCooking.Helpers
                     var parseSuccessful = Double.TryParse(valuesInLine[7], out parseDouble);
                     if (parseSuccessful)
                     {
-                        allUsersRatesForOneDish[i] = new double[] { parseDouble };
+                        allUsersRatesForOneDish[i - 1] = new double[] { parseDouble };
                     }
                     else
                     {
-                        allUsersRatesForOneDish[i] = new double[] {0.0};
+                        allUsersRatesForOneDish[i - 1] = new double[] { 0.0 };
                     }
 
                 }
