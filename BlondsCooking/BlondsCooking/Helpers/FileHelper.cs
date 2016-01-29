@@ -10,6 +10,7 @@ namespace BlondsCooking.Helpers
     public class FileHelper
     {
         private const int NumberOfTesters = 27;
+        private const int NumberOfRecipes = 25;
         private string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
         private string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\log.txt";
         public Tuple<double[][], double[][]> ReadFromFile(string path)
@@ -59,7 +60,7 @@ namespace BlondsCooking.Helpers
             return temp;
         }
 
-        public void GetAllUsersPreferences(int dishId)
+        public double[][] GetAllUsersPreferences(int dishId)
         {
             double[][] allUsersPreferences = new double[NumberOfTesters][];
             PathToFile = PathToFile.Replace(0.ToString(), dishId.ToString());
@@ -84,9 +85,36 @@ namespace BlondsCooking.Helpers
                             preferencesOfOneUser[j - 1] = 0.0;
                         }
                     }
+                    allUsersPreferences[i - 1] = preferencesOfOneUser;
                 }
-
             }
+            return allUsersPreferences;
+        }
+
+        public double[][] GetUserRatesOfAllDishes(int userId)
+        {
+            double[][] oneUserRatesOfAllDishes = new double[NumberOfRecipes][];
+            using (StreamReader streamReader = new StreamReader(PathToFile))
+            {
+                for (int i = 0; i < NumberOfRecipes; i++)
+                {
+                    PathToFile = PathToFile.Replace(i.ToString(), (i + 1).ToString());
+                    string allLines = streamReader.ReadToEnd();
+                    var eachLine = allLines.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                    var valuesInLine = eachLine[userId].Split(';');
+                    double parseDouble;
+                    var parseSuccessful = Double.TryParse(valuesInLine[7], out parseDouble);
+                    if (parseSuccessful)
+                    {
+                        oneUserRatesOfAllDishes[i] = new double[] {parseDouble};
+                    }
+                    else
+                    {
+                        oneUserRatesOfAllDishes[i] = new double[] { 0.0 };
+                    }
+                } 
+            }
+            return oneUserRatesOfAllDishes;
         }
     }
 }
