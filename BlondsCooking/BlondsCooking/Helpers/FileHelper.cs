@@ -9,6 +9,9 @@ namespace BlondsCooking.Helpers
 {
     public class FileHelper
     {
+        private const int NumberOfTesters = 27;
+        private string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
+        private string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\log.txt";
         public Tuple<double[][], double[][]> ReadFromFile(string path)
         {
             Tuple<double[][], double[][]> temp;
@@ -54,6 +57,36 @@ namespace BlondsCooking.Helpers
             }
             temp = new Tuple<double[][], double[][]>(xInAllLines, yInAllLines);
             return temp;
-        } 
+        }
+
+        public void GetAllUsersPreferences(int dishId)
+        {
+            double[][] allUsersPreferences = new double[NumberOfTesters][];
+            PathToFile = PathToFile.Replace(0.ToString(), dishId.ToString());
+            using (StreamReader streamReader = new StreamReader(PathToFile))
+            {
+                string allLines = streamReader.ReadToEnd();
+                var eachLine = allLines.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 1; i < eachLine.Length; i++)
+                {
+                    var valuesInLine = eachLine[i].Split(';');
+                    double[] preferencesOfOneUser = new double[valuesInLine.Length - 2];
+                    for (int j = 1; j < valuesInLine.Length -1; j++)
+                    {
+                        double parseDouble;
+                        var parseSuccessful = Double.TryParse(valuesInLine[j], out parseDouble);
+                        if (parseSuccessful)
+                        {
+                            preferencesOfOneUser[j - 1] = parseDouble;
+                        }
+                        else
+                        {
+                            preferencesOfOneUser[j - 1] = 0.0;
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }
