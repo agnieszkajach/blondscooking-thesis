@@ -247,6 +247,9 @@
     <Content Include="Images\Layout\Categories\cookies-czarny.png" />
     <Content Include="Images\Layout\Categories\cup-cake-bialy.png" />
     <Content Include="Images\Layout\Categories\cup-cake-czarny.png" />
+    <Content Include="Images\Layout\Categories\all-recipes.png" />
+    <Content Include="Images\Layout\Categories\mapping.png" />
+    <Content Include="Images\Layout\Categories\recommended-recipes.png" />
     <Content Include="Images\Layout\Categories\main-dishes-bialy.png" />
     <Content Include="Images\Layout\Categories\main-dishes-czarny.png" />
     <Content Include="Images\Layout\Categories\muffins-bialy.png" />

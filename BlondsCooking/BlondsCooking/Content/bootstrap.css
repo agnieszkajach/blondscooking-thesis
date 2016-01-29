@@ -41,25 +41,28 @@ footer {
 }
 
 
-.muffin-category {
-    background: url('../Images/Layout/Categories/muffins-bialy.png') no-repeat;
+.all-recipes-category {
+    background: url('../Images/Layout/Categories/all-recipes.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 250px;
+    height: 40vh;
+    margin-left: 6vw;
 }
 
-.cookie-category {
-    background: url('../Images/Layout/Categories/cookies-bialy.png') no-repeat;
+.recommended-recipes-category {
+    background: url('../Images/Layout/Categories/recommended-recipes.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 250px;
+    height: 40vh;
+    margin-left: 6vw;
 }
 
-.cake-category {
-    background: url('../Images/Layout/Categories/cakes-bialy.png') no-repeat;
+.mapping-category {
+    background: url('../Images/Layout/Categories/mapping.png') no-repeat;
     display: block;
     background-size: contain;
-    height: 250px;
+    height: 40vh;
+    margin-left: 6vw;
 }
 
 .shake-category {
