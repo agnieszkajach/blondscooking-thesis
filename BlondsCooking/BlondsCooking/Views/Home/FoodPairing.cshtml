@@ -1,4 +1,6 @@
-﻿<div ng-app="BlondsCookingApp">
+﻿<h1>Odkrywaj połączenia smakowe</h1>
+
+<div ng-app="BlondsCookingApp">
     <div ng-controller="IngredientController">        
         <div class="row" ng-show="show">
             <div class="col-md-3 all-ingredient-corner btn" ng-repeat="i in ingredients" ng-click="addIngredient(i.Id)" >
@@ -12,7 +14,6 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Discover food pairings</h1>
                         <input type="button" class="btn btn-success" value="Start" ng-click="showIngredients()"/>
                         <div class="col-md-1 selected-ingredients-corner" ng-repeat="p in pairings">
                             {{p.Name}}

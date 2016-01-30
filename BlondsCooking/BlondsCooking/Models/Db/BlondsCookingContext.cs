@@ -12,7 +12,7 @@ namespace BlondsCooking.Models.Db
     {
         public BlondsCookingContext() : base("DefaultConnection")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlondsCookingContext, Migrations.Configuration>("DefaultConnection"));
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlondsCookingContext, Migrations.Configuration>("DefaultConnection"));
         }
 
         public DbSet<Category> Categories { get; set; }
