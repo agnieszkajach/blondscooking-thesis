@@ -258,6 +258,9 @@
     <Content Include="Images\Layout\Categories\pancakes-czarny.png" />
     <Content Include="Images\Layout\Categories\shake-bialy.png" />
     <Content Include="Images\Layout\Categories\shake-czarny.png" />
+    <Content Include="Images\Layout\best-match.png" />
+    <Content Include="Images\Layout\weak-match.png" />
+    <Content Include="Images\Layout\weakest-match.png" />
     <Content Include="Images\Layout\Jumbotron\rollsy.png" />
     <Content Include="Images\Layout\Jumbotron\muffiny.png" />
     <Content Include="Images\Layout\Jumbotron\tarta.png" />

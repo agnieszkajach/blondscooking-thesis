@@ -29,15 +29,15 @@ namespace BlondsCooking.Models
             }
             if (MatchValue >= 0.3)
             {
-                MatchingIconUrl = "git";
+                MatchingIconUrl = "../../Images/Layout/best-match.png";
             }
             else if (MatchValue < 0.3 && MatchValue >= 0.1)
             {
-                MatchingIconUrl = "soso";
+                MatchingIconUrl = "../../Images/Layout/weak-match.png";
             }
             else
             {
-                MatchingIconUrl = "bad";
+                MatchingIconUrl = "../../Images/Layout/weakest-match.png";
             }
         }
 

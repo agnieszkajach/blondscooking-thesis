@@ -6,7 +6,9 @@
             <div class="col-md-3 all-ingredient-corner btn" ng-repeat="i in ingredients" ng-click="addIngredient(i.Id)" >
                 {{i.Name}}
                 @*<input id="add-ingredient2" href="#menu-toggle" type="button" class="btn btn-default" value="Dodaj" ng-click="addIngredient(i.Id)" />*@
-                <div ng-if="pairings.length > 0">{{i.MatchingIconUrl}}</div>
+                <div ng-if="pairings.length > 0">
+                    <img class="matching-icon" ng-src="{{i.MatchingIconUrl}}" alt="Image" />                  
+                </div>
             </div>
         </div>
 
