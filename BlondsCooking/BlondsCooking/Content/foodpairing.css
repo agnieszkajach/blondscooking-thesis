@@ -18,3 +18,11 @@
     width: 5vw;
     height: auto;
 }
+
+.selected-ingredient {
+    font-size: 18pt;
+}
+
+.all-ingredients {
+    font-size: 14pt;
+}

@@ -1,92 +1,17 @@
 ﻿@model IEnumerable<BlondsCooking.Models.Structure.Recipe>
 
+<h2>Wybraliśmy to specjalnie dla Ciebie!</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ingredients)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Temperature)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Time)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SpicyValue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SaltyValue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BitterValue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SweetValue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MeatValue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SourValue)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ingredients)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Temperature)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpicyValue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaltyValue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BitterValue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SweetValue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MeatValue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SourValue)
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="col-md-4 category">
+        <a href="@Url.Action("Recipe", "Category", new {id = item.Id}, null)">
+            <div class="img-category">
+                <img class="img-responsive img-full" src="@Url.Content(item.Image)" alt="" />
+            </div>
+        </a>
+        <p class="recipe-title-in-category">
+            @item.Name
+        </p>
+    </div>
 }
-
-</table>

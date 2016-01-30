@@ -11,10 +11,11 @@
     <div class="col-md-3 category">
         <a href="@Url.Action("Recipe", "Category", new {id = item.Id}, null)">
             <div class="img-category">
-                <img class="img-responsive img-full" src="@Url.Content(item.Image)" alt="" />
+                <img class="img-responsive img-full" src="@Url.Content(item.Image)" alt=""/>
             </div>
         </a>
         <p class="recipe-title-in-category">
             @item.Name
         </p>
     </div>
+}
