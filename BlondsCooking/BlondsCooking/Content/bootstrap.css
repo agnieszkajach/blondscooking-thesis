@@ -90,6 +90,22 @@ footer {
     height: 70vh;
 }
 
+.img-similar-recipe {
+    height: 25vh;
+}
+
+.similar-recipe-info {
+    font-family: "Segoe UI", Arial;
+    font-size: 2vh;
+    color: #FFFFFF;
+}
+
+.title-similar-recipe {
+    font-family: "Segoe UI", Arial;
+    font-size: 2vh;
+    color: #FFFA0C;
+}
+
 .title-recipe {
     font-family: "Segoe UI", Arial;
     font-size: 5vh;

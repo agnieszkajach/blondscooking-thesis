@@ -8,7 +8,7 @@
 
 <div ng-app="RecipeModule">
     <div class="col-md-4">
-        <img class="img-recipe" src="@Url.Content(Model.RecipeRateViewModel.Image)" alt="Image"/>
+        <img class="img-recipe" src="@Url.Content(Model.RecipeRateViewModel.Image)" alt="Image" />
         @if (Request.IsAuthenticated)
         {
             <div ng-controller="RecipeController">
@@ -23,8 +23,8 @@
                         <p ng-show="validationError">Hey, you forgot about something..</p>
                         <span>
                             <select class="form-control" name="rateSelect" ng-model="rateValue" ng-options="r for r in rates"></select>
-                            <input type="submit" value="Oceń" class="btn btn-default" ng-click="rateRecipe(rateValue)" />    
-                        </span>                       
+                            <input type="submit" value="Oceń" class="btn btn-default" ng-click="rateRecipe(rateValue)" />
+                        </span>
                     </div>
                 </div>
 
@@ -42,6 +42,24 @@
             @Html.DisplayFor(model => model.RecipeRateViewModel.Description)
         </div>
     </div>
+
+
+    <div class="similar-recipe-info">Jeżeli Ci to posmakuje koniecznie wypróbuj również: </div>
+    <div class="col-md-8">
+        @foreach (var similarRecipe in Model.SimilarRecipes)
+        {
+            <div class="col-md-2">
+                <a href="@Url.Action("Recipe", "Category", new {id = similarRecipe.Id}, null)">
+                    <img class="img-similar-recipe" src="@Url.Content(similarRecipe.Image)" alt="Image" />
+                </a>
+
+                <div class="title-similar-recipe">
+                    @Html.DisplayFor(model => model.RecipeRateViewModel.Name)
+                </div>
+            </div>
+        }
+    </div>
+
 
 </div>
 
