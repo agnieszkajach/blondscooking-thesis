@@ -1,19 +1,19 @@
-﻿@model BlondsCooking.Models.RecipeRateViewModel
+﻿@model BlondsCooking.Models.RecipeViewModel
 
 @{
     ViewBag.Title = "Recipe";
-    var imagePath = @Model.Image;
+    var imagePath = @Model.RecipeRateViewModel.Image;
 }
 
 
 <div ng-app="RecipeModule">
     <div class="col-md-4">
-        <img class="img-recipe" src="@Url.Content(Model.Image)" alt="Image"/>
+        <img class="img-recipe" src="@Url.Content(Model.RecipeRateViewModel.Image)" alt="Image"/>
         @if (Request.IsAuthenticated)
         {
             <div ng-controller="RecipeController">
-                <input id="recipeId" type="hidden" value="@Model.Id" />
-                <input id="rateValue" type="hidden" value="@Model.Rate" />
+                <input id="recipeId" type="hidden" value="@Model.RecipeRateViewModel.Id" />
+                <input id="rateValue" type="hidden" value="@Model.RecipeRateViewModel.Rate" />
                 <div ng-show="recipeRated" class="rate-recipe">
                     Your rate: {{rateValue}}
                 </div>
@@ -33,13 +33,13 @@
     </div>
     <div class="col-md-8">
         <div class="title-recipe">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.RecipeRateViewModel.Name)
         </div>
         <div>
-            @Html.DisplayFor(model => model.Ingredients)
+            @Html.DisplayFor(model => model.RecipeRateViewModel.Ingredients)
         </div>
         <div>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.RecipeRateViewModel.Description)
         </div>
     </div>
 

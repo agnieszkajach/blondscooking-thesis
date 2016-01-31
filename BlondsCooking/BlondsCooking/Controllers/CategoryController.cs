@@ -9,6 +9,7 @@ using BlondsCooking.LinearRegression;
 using BlondsCooking.Models;
 using BlondsCooking.Models.Db;
 using BlondsCooking.Models.Structure;
+using BlondsCooking.Statistics;
 using Microsoft.AspNet.Identity;
 
 namespace BlondsCooking.Controllers
@@ -16,7 +17,7 @@ namespace BlondsCooking.Controllers
     public class CategoryController : Controller
     {
         private BlondsCookingContext context;
-        private RecipeRateViewModel model;
+        private RecipeViewModel model;
         // GET: Category
         public ActionResult Index()
         {
@@ -36,7 +37,7 @@ namespace BlondsCooking.Controllers
             {
                 return View("Error");
             }
-            model = new RecipeRateViewModel()
+            RecipeRateViewModel recipeRateViewModel = new RecipeRateViewModel()
             {
                 Id = recipeModel.Id,
                 Name = recipeModel.Name,
@@ -47,6 +48,12 @@ namespace BlondsCooking.Controllers
                 Time = recipeModel.Time,
                 Rate = (rate == null) ? null : (int?)rate.Rate
             };
+
+            DishesCompairingHelper helper = new DishesCompairingHelper();
+            List<Recipe> similarRecipes = new List<Recipe>(helper.GetTopThreeMostSimilarDishes(recipeModel));
+
+            model = new RecipeViewModel(recipeRateViewModel, similarRecipes);
+
             return View(model);
         }
 

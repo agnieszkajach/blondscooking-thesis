@@ -220,6 +220,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\LinearRegressionModel\Rating.cs" />
     <Compile Include="Models\RecipeRateViewModel.cs" />
+    <Compile Include="Models\RecipeViewModel.cs" />
     <Compile Include="Models\Requests\IngredientRequestModel.cs" />
     <Compile Include="Models\Structure\Category.cs" />
     <Compile Include="Models\Structure\Ingredient.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Models\Structure\UserRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Statistics\DishesCompairingHelper.cs" />
     <Compile Include="Statistics\IngredientsPairingHelper.cs" />
   </ItemGroup>
   <ItemGroup>
