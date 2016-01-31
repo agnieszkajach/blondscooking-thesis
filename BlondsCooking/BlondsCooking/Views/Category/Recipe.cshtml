@@ -15,7 +15,7 @@
                 <input id="recipeId" type="hidden" value="@Model.RecipeRateViewModel.Id" />
                 <input id="rateValue" type="hidden" value="@Model.RecipeRateViewModel.Rate" />
                 <div ng-show="recipeRated" class="rate-recipe">
-                    Your rate: {{rateValue}}
+                    Twoja ocena: {{rateValue}}
                 </div>
                 <div ng-hide="recipeRated">
                     <div class="col-md-10">
@@ -35,22 +35,23 @@
         <div class="title-recipe">
             @Html.DisplayFor(model => model.RecipeRateViewModel.Name)
         </div>
-        <div>
+        <div class="recipe-content">
             @Html.DisplayFor(model => model.RecipeRateViewModel.Ingredients)
         </div>
-        <div>
+        <div class="recipe-content">
             @Html.DisplayFor(model => model.RecipeRateViewModel.Description)
         </div>
     </div>
 
 
-    <div class="similar-recipe-info">Jeżeli Ci to posmakuje koniecznie wypróbuj również: </div>
-    <div class="col-md-8">
+
+    <div class="col-md-9">
+        <div class="similar-recipe-info">Jeżeli Ci to zasmakuje koniecznie wypróbuj również: </div>
         @foreach (var similarRecipe in Model.SimilarRecipes)
         {
             <div class="col-md-2">
                 <a href="@Url.Action("Recipe", "Category", new {id = similarRecipe.Id}, null)">
-                    <img class="img-similar-recipe" src="@Url.Content(similarRecipe.Image)" alt="Image" />
+                    <img class="img-similar-recipe" src="@Url.Content(similarRecipe.Image)" alt="Image"/>
                 </a>
 
                 <div class="title-similar-recipe">

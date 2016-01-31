@@ -87,7 +87,10 @@ namespace BlondsCooking.Migrations
                 MeatValue = dishParameters[0][4],
                 SourValue = dishParameters[0][5],
                 CategoryId = context.Categories.Where(category => category.Name.CompareTo("Dishes") == 0).Select(category => category.Id).FirstOrDefault(),
-                IngredientsVector = "kurczak,oregano,ostra papryka,szynka parmeńska,pomidor,mozzarella,bazylia"
+                IngredientsVector = "kurczak,oregano,ostra papryka,szynka parmeńska,pomidor,mozzarella,bazylia",
+                Ingredients = "2 pojedyncze filety z kurczaka, 1 łyżeczka suszonego oregano, szczypta ostrej papryki, 6 plasterków (ok. 80 g) szynki parmeńskiej lub serrano, 1 puszka pokrojonych pomidorów (polpa di pomodori), 1 kulka mozzarelli (użyłam mozzarelli di bufala), sól, pieprz, masło i oliwa extra vergine, bazylia",
+                Description = "Filety z kurczaka oczyścić z błonek i kostek, opłukać. Każdy pokroić na 3 części w następujący sposób: filet położyć na deskę i przekroić pionowo na 2 części, jedną z tych części - grubszą - pokroić w poprzek na 2 cieńsze filety a drugą pozostawić w całości). Doprawić solą, pieprzem, suszonym oregano i ostrą papryką, wysmarować 2 łyżeczkami oliwy i zawinąć w plasterki szynki. Rozgrzać większą patelnię z pokrywą, włożyć 2 łyżki masła i 1 łyżkę oliwy extra vergine. Na rozgrzany tłuszcz włożyć filety i smażyć przez ok. 5 minut, w międzyczasie 2-3 razy przewrócić na drugą stronę. Stopniowo, łyżką wykładać pomidory i zagotować. Pomidory doprawić delikatnie solą, pieprzem i opcjonalnie szczyptą ostrej papryki. Gotować pod przykryciem przez ok. 6 minut, w międzyczasie filety przewrócić na drugą stronę. Dodać kawałki mozzarelli, przykryć i gotować jeszcze przez ok. 2 minuty aż ser się roztopi. Posypać bazylią i podawać. Można podgrzewać."
+
             });
 
             context.Recipes.AddOrUpdate(recipe => recipe.Name, new Recipe()
