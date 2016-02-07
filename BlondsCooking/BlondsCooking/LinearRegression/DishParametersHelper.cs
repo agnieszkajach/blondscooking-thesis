@@ -18,7 +18,7 @@ namespace BlondsCooking.LinearRegression
         private const int NumberOfRecipesToLearn = 20;
         private const int NumberOfRecipesToTest = 5;
         private const int NumberOfLearningIteration = 10;
-        private string PathToLogFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\log.txt";
+        private string PathToLogFile = AppDomain.CurrentDomain.BaseDirectory + "bin\\log.txt";
 
         public List<double[]> CalculateParameterForDishes()
         {

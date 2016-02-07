@@ -61,7 +61,7 @@ namespace BlondsCooking.Helpers
 
         public double[][] GetAllUsersPreferences()
         {
-            string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
+            string PathToFile = AppDomain.CurrentDomain.BaseDirectory + "bin\\meal_0.csv";
             double[][] allUsersPreferences = new double[NumberOfTesters][];
             using (StreamReader streamReader = new StreamReader(PathToFile))
             {
@@ -92,7 +92,7 @@ namespace BlondsCooking.Helpers
 
         public double[][] GetUserRatesOfAllDishes(int userId)
         {
-            string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_0.csv";
+            string PathToFile = AppDomain.CurrentDomain.BaseDirectory + "bin\\meal_0.csv";
             double[][] oneUserRatesOfAllDishes = new double[NumberOfRecipes][];
 
             for (int i = 0; i < NumberOfRecipes; i++)
@@ -121,7 +121,7 @@ namespace BlondsCooking.Helpers
 
         public double[][] GetAllUsersRatesForOneDish(int dishId)
         {
-            string PathToFile = "C:\\GitHub\\blondscooking-thesis\\BlondsCooking\\BlondsCooking\\bin\\meal_" + dishId + ".csv";
+            string PathToFile = AppDomain.CurrentDomain.BaseDirectory + "bin\\meal_" + dishId + ".csv";
             double[][] allUsersRatesForOneDish = new double[NumberOfTesters][];
             using (StreamReader streamReader = new StreamReader(PathToFile))
             {
