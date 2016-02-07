@@ -17,7 +17,7 @@ namespace BlondsCooking.LinearRegression
         private const int NumberOfRecipes = 25;
         private const int NumberOfRecipesToLearn = 20;
         private const int NumberOfRecipesToTest = 5;
-        private const int NumberOfLearningIteration = 10;
+        private const int NumberOfLearningIteration = 100;
         private string PathToLogFile = AppDomain.CurrentDomain.BaseDirectory + "bin\\log.txt";
 
         public List<double[]> CalculateParameterForDishes()
@@ -111,6 +111,40 @@ namespace BlondsCooking.LinearRegression
                     }
                     globalError = globalUserErrorSum / 175;
                     writer.WriteLine("{1} iteration: Global per user {0}", globalError, k);
+                }
+
+                inputs = new double[NumberOfUsers][];
+                outputs = new double[NumberOfUsers][];
+                for (int j = 0; j < coefficients.Count; j++)
+                {
+                    inputs[j] = coefficients[j];
+                }
+                coefficients = new List<double[]>();
+                for (int i = 0; i < NumberOfRecipes; i++)
+                {
+                    double sum = 0.0;
+                    //writer.WriteLine("Meal {0}", i);
+                    outputs = fileHelper.GetAllUsersRatesForOneDish(i);
+                    MultivariateLinearRegression regression = new MultivariateLinearRegression(6, 1);
+                    double errorRegression = regression.Regress(inputs.Take(NumberOfUsersToLearn).ToArray(), outputs.Take(NumberOfUsersToLearn).ToArray());
+                    for (int j = NumberOfUsersToLearn; j < NumberOfUsers; j++)
+                    {
+                        var actual = regression.Compute(inputs[j]);
+                        var error = Math.Abs(outputs[j][0] - actual[0]);
+                        //sum += error;
+                        globalRecipeErrorSum += error;
+                        //writer.WriteLine("Actual {0}, {3}, Expected {1}, Error {2}, {4}", Math.Round(actual[0]), Math.Round(outputs[j][0]), Math.Round(error), actual[0], error);
+                    }
+                    //double average = sum / 7;
+                    //writer.WriteLine("Average error: {0}", average);
+                    double[] coef = new double[6];
+                    for (int l = 0; l < regression.Coefficients.Length; l++)
+                    {
+                        //writer.WriteLine("x_{0} = {1} ; ", k, regression.Coefficients[k, 0]);
+                        coef[l] = regression.Coefficients[l, 0];
+                    }
+                    //writer.WriteLine();
+                    coefficients.Add(coef);
                 }
 
 
